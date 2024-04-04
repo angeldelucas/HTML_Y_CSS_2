@@ -1,0 +1,146 @@
+.header {
+    height: 130px;
+    margin-bottom: 1%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-image: url("../images/header_1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__frame {
+        @include hide-elto;
+        position: relative;
+
+        .frame {
+            &__img {
+                width: 320px;
+                height: 130px;
+            }
+        }
+    }
+
+    &__submenu-button {
+        padding: 1%;
+        border: 1px solid rgb(255, 255, 255);
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        color: rgb(255, 255, 255);
+        background: rgba(170, 170, 170, 0.700);
+        border-radius: 1px;
+
+        .submenu-button {
+            &__checbox-label {
+                cursor: pointer;
+                content: url("../images/bars-solid_white.svg");
+                width: 20px;
+                height: 20px;
+                color: rgb(255, 255, 255);
+            }
+
+            &__nav-bars {
+                @include hide-elto;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                align-items: center;
+                background: rgba(170, 170, 170, 0.700);
+                border-radius: 1px;
+
+                .nav-bars {
+                    &__submenu {
+                        @include hide-elto;
+                        padding: 0;
+                        position: absolute;
+                        right: 0;
+                        list-style: none;
+
+                        .submenu {
+                            &__elto {
+                                padding: 8px 0;
+                                text-align: center;
+
+                                .elto {
+                                    &__internal-link {
+                                        @include internal-link;
+                                    }
+
+                                    &__internal-link--selected {
+                                        @include internal-link;
+                                    }
+                                }
+
+                                &:hover {
+                                    @include link-over;
+                                }
+
+                                &:hover>.elto__internal-link {
+                                    @include link-over;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.checbox {
+    z-index: 10;
+    display: none;
+
+    &:checked~.header {
+        margin-bottom: 220px;
+    }
+
+    &:checked~.header>.header__submenu-button>.submenu-button__nav-bars {
+        @include show-elto;
+        position: absolute;
+        top: 130px;
+        right: 0;
+        left: 0;
+    }
+
+    &:checked~.header>.header__submenu-button>.submenu-button__nav-bars .nav-bars__submenu {
+        @include show-elto;
+        width: 100%;
+        padding: 0;
+        display: grid;
+        z-index: 100;
+        grid-template-rows: repeat(6, 1fr);
+        transition: all 800ms ease-out;
+    }
+
+    &:checked~.header>.header__submenu-button>.submenu-button__checbox-label {
+        content: url("../images/chevron-up-solid-white.svg");
+    }
+}
+
+
+@media (min-width: 768px) {    
+    .header {
+        width: 100vw;
+        height: auto;
+        background-image: none;
+        overflow-x: hidden;
+
+        &__frame {
+            @include show-elto;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        &__submenu-button {
+            @include hide-elto;
+        }
+    }
+
+    .checbox {
+        &:checked~.header {
+            margin-bottom: 1%;
+        }
+    }
+}

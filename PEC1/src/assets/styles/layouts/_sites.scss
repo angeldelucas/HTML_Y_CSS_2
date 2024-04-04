@@ -1,0 +1,115 @@
+.sites-container {
+    margin-top: 2%;
+    margin-bottom: 15%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: auto auto auto auto auto;
+
+    &__title {
+        @include title-font-style(1.9rem);
+        grid-column: span 2;
+        grid-row-start: 1;
+        padding: -2% 0 0;
+    }
+
+    .site {
+        border: 1px solid rgb(202, 202, 202);
+        display: flex;
+        cursor: pointer;
+        background-color: var(--contrast-color-light);
+
+        &__figure {
+            width: 100%;
+            height: 200px;
+        }
+
+        &__image {
+            width: 100%;
+            height: 100%;
+        }
+
+        &__description {
+            @include hide-elto;
+            width: 50%;
+            padding: 1%;
+            display: flex;
+            flex-direction: column;
+
+            .description {
+                &__title {
+                    @include title-font-style(1.2rem);
+                    color: rgb(88, 88, 90);
+                    text-transform: uppercase;
+                }
+
+                &__text {
+                    @include text-font-style(0.9rem);
+                    margin: 0;
+                    color: rgb(88, 88, 90);
+                }
+            }
+        }
+
+        &:nth-child(even) {
+            @include grid-transform(span 0, "axisX", 114%);
+        }
+
+        &:nth-child(odd) {
+            @include grid-transform(span 0, "axisX", -114%);
+        }
+
+        &:hover>.site__description {
+            @include show-elto;
+            width: 45%;
+            position: absolute;
+            left: auto;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .sites-container {
+        grid-template-columns: repeat(4, 25%);
+        width: 100%;
+        margin-bottom: 0;
+
+        .site {
+            &__description {
+                left: 0;
+            }
+
+            &:nth-child(even) {
+                @include grid-transform(span 2, "axisY", 115%);
+                grid-row-start: 2;
+            }
+
+            &:nth-child(odd) {
+                @include grid-transform(span 2, "axisY", -115%);
+                grid-row-start: 3;
+            }
+
+            &:nth-child(8) {
+                @include grid-transform(3 / span 2, "axisY", 115%);
+            }
+
+            &:nth-child(9) {
+                @include grid-transform(3 / span 2, "axisY", -115%);
+            }
+
+            &:hover>.site__description {
+                @include show-elto;
+                width: 35%;
+                position: absolute;
+                left: auto;
+            }
+        }
+
+        &__title {
+            grid-column: span 4;
+            font-size: 2.9rem;
+        }
+    }
+}
+
+
+

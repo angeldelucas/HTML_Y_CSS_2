@@ -1,0 +1,20 @@
+:root {
+  --text-color-footer-bacground: rgb(0, 59, 74);
+  --contrast-color: rgb(191, 12, 240);
+  --contrast-color-light: rgb(229, 225, 254);
+  --text-color-white: rgb(255, 255, 255);
+  --text-color-gray: rgb(158, 157, 171);
+  --background-color-body: rgb(247, 247, 247);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

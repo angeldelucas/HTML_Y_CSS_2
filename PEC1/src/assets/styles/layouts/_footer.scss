@@ -1,0 +1,98 @@
+.footer {
+    @include text-font-style(0.7rem);
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 4%;
+    bottom: 0;
+    line-height: 1.5;
+    color: var(--text-color-white);
+    background-color: rgb(170, 170, 170);
+
+    &__copyright {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .copyright {
+            &__logo {
+                width: 200px;
+            }
+
+            &__author {
+                margin: 16px 0 0;
+            }
+        }
+    }
+
+    &__links {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .links {
+            &__social-menu {
+                padding: 0;
+                margin: 16px;
+                display: flex;
+                list-style-type: none;
+            }
+
+            &__legal-menu {
+                padding: 0;
+                list-style-type: none;
+
+                .legal-menu {
+                    &__elto {
+                        padding-bottom: 5px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    &__link {
+        color: var(--text-color-white);
+        text-decoration-line: none;
+
+        &:hover {
+            color: var(--text-color-white-hover);
+            opacity: 0.7;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        font-size: 0.9rem;
+
+        &__copyright {
+            align-items: start;
+        }
+
+        &__links {
+            align-items: end;
+            align-self: flex-end;
+
+            .links {
+                &__legal-menu {
+                    width: 450px;
+                    height: auto;
+                    display: grid;
+                    grid-template-columns: repeat(3, auto);
+
+                    .legal-menu {
+                        &__elto:nth-child(2),
+                        &__elto:nth-child(1) {
+                            border-right: 2px solid rgb(255, 255, 255);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

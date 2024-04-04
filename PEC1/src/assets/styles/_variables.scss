@@ -1,0 +1,87 @@
+$font-family-noto: 'Noto Serif', sans-serif;
+$font-family-lato: 'Lato', sans-serif;
+
+@mixin title-font-style($size) {
+  font-family: $font-family-noto;
+  font-size: $size;
+  font-weight: 600;
+  color: var(--text-color-footer-bacground);
+}
+
+@mixin text-font-style($size) {
+  font-family: $font-family-lato;
+  font-size: $size;
+  font-weight: 400;
+  color: var(--text-color-footer-bacground);
+}
+
+@mixin link-over() {
+  cursor: pointer;
+  color: var(--text-color-footer-bacground);
+  background-color: rgb(255, 255, 255);
+}
+
+@mixin internal-link() {
+  cursor: pointer;
+  font-family: $font-family-lato;
+  font-weight: 600;
+  // color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--text-color-footer-bacground);
+}
+
+@mixin arrow-style() {
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgb(230, 230, 230);
+
+  &:hover {
+    box-shadow: 0 0 5px rgb(179, 179, 179);
+  }
+}
+
+@mixin arrow-style-hover() {
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 500ms ease-out;
+
+  &:hover {
+    box-shadow: 0 0 5px rgb(179, 179, 179);
+  }
+}
+
+@mixin hide-elto {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+@mixin show-elto {
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+}
+
+@mixin grid-transform($span, $transform, $space) {
+  &:hover {
+    grid-column: $span;
+  }
+
+  &:hover>.site__figure {
+    @if $transform == "axisY" {
+      transform: translateY(#{$space});
+    }
+
+    @else if $transform == "axisX" {
+      transform: translateX(#{$space});
+    }
+    scale: 1.2;
+    width: 250px;
+    box-shadow: 0 0 40px rgb(0, 0, 0);
+    transition: transform 500ms ease-out;
+  }
+}
+
+@function calc-top-offset($n) {
+  @return ($n - 1) * 70;
+}

@@ -1,0 +1,31 @@
+.intro {
+    height: 60vh;
+    background-color: rgb(0, 0, 0);
+    background-image: url("../images/bienvenida.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: imageChange 40s infinite;
+
+    &__title {
+        @include title-font-style(4rem);
+        width: fit-content;
+        padding-left: 30px;
+        position: relative;
+        top: 30px;
+    }
+}
+
+@keyframes imageChange {
+    0% {
+        background-image: url("../images/bienvenida.jpeg");
+    }
+
+    50% {
+        background-image: url("../images/MONDEJAR (GUADALAJARA)PLAZA MAYOR.jpg");
+    }
+
+    100% {
+        background-image: url("../images/animation_iglesia.jpg");
+    }
+}

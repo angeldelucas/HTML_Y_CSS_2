@@ -1,0 +1,57 @@
+.menu {
+    @include hide-elto;
+    display: flex;
+    justify-content: center;
+    background-color: var(--background-color-body);
+
+    &__list-options {
+        width: 100%;
+        background-color: rgba(170, 170, 170);
+
+        .list-options {
+            &__elto {
+                cursor: pointer;
+                padding: 10% 0;
+                text-align: center;
+
+                .elto {
+                    &__internal-link--large {
+                        @include internal-link;
+                        font-size: large;
+
+                        &:hover {
+                            @include link-over;
+                        }
+                    }
+                }
+                
+                &:hover {
+                    color: var(--text-color-footer-bacground);
+                    background-color: rgb(255, 255, 255);
+                }
+
+                &:hover>.elto__internal-link--large {
+                    color: var(--text-color-footer-bacground);
+                    background-color: rgb(255, 255, 255);
+                }                
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .menu {
+        @include show-elto;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+
+        &__list-options {
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            list-style-type: none;
+        }
+    }
+}

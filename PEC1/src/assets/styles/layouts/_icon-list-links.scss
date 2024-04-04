@@ -1,0 +1,75 @@
+.icon-list {
+    @include hide-elto;
+}
+
+@media (min-width: 768px) {
+    .icon-list {
+        @include show-elto;
+        position: fixed;
+        z-index: 10;
+        top: 150px;
+        left: 0;
+
+        &__links {
+            width: 80px;
+            padding: 0;
+            list-style: none;
+
+            .links {
+                &__elto {
+                    height: 10px;
+                    padding: 30% 20%;
+                    border: 2px solid rgb(216, 216, 216);
+                    margin: 10% 0 0;
+                    display: flex;
+                    flex-direction: row;
+                    cursor: pointer;
+                    position: absolute;
+                    background-color: rgb(238, 238, 238);
+                    border-left: 0;
+                    border-top-right-radius: 30px;
+                    border-bottom-right-radius: 30px;                    
+
+                    .elto {
+                        &__icon-link {
+                            display: flex;
+                            align-items: center;
+                            color: var(--text-color-footer-bacground);
+                            text-decoration: none;
+                        }
+
+                        &__leyend {
+                            @include text-font-style(1rem);
+                            @include hide-elto;
+                            padding-left: 20px;
+                            margin: 0;
+                            // color: var(--text-color-footer-bacground);
+                            text-decoration: none;
+                        }
+                    }
+
+                    &:hover>.elto__icon-link>.elto__leyend {
+                        @include show-elto;
+                        transition: all 500ms ease-out;
+                    }
+
+                    &:nth-child(1) {
+                        top: #{calc-top-offset(1)}px;
+                    }
+
+                    &:nth-child(2) {
+                        top: #{calc-top-offset(2)}px;
+                    }
+
+                    &:nth-child(3) {
+                        top: #{calc-top-offset(3)}px;
+                    }
+
+                    &:nth-child(4) {
+                        top: #{calc-top-offset(4)}px;
+                    }
+                }
+            }
+        }
+    }
+}
