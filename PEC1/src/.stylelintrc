@@ -4,7 +4,8 @@
       "stylelint-config-recommended-scss",
       "stylelint-config-sass-guidelines"
    ],
-   "rules": {
+   "rules": {      
+      "comment-no-empty": true,
       "declaration-property-value-no-unknown": [
          true,
          {
@@ -31,14 +32,14 @@
             "message": "Empty line before declaration not allowed"
          }
       ],
+      "unit-allowed-list": ["%", "deg", "px", "rem", "ms", "s", "vh", "vw", "fr"],
       "declaration-property-unit-allowed-list": {
          "/^border/": [
             "px"
          ],
          "/^font-size/": [
             "rem"
-         ]
-         
+         ]         
       },
       "order/properties-order": [
          "width",
