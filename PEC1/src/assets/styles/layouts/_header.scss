@@ -22,12 +22,12 @@
 
     &__submenu-button {
         padding: 1%;
-        border: 1px solid rgb(255, 255, 255);
+        border: 1px solid $text-color-white;
         margin: 10px;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        color: rgb(255, 255, 255);
+        color: $text-color-white;
         background: rgba(170, 170, 170, 0.700);
         border-radius: 1px;
 
@@ -37,7 +37,7 @@
                 content: url("../images/bars-solid_white.svg");
                 width: 20px;
                 height: 20px;
-                color: rgb(255, 255, 255);
+                color: $text-color-white;
             }
 
             &__nav-bars {

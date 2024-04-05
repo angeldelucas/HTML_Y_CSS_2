@@ -9,7 +9,7 @@
         border: 1px solid rgb(202, 202, 202);
         margin-bottom: 2%;
         position: relative;
-        background-color: var(--background-color-body);
+        background-color: $background-color-body;
 
         .article {
             &__img-container {
@@ -32,13 +32,13 @@
                 padding: 2%;
                 top: 2%;
                 left: 2%;
-                color: var(--text-color-white);
+                color: $text-color-white;
                 text-decoration: none;
-                background-color: var(--text-color-footer-bacground);
+                background-color: $text-color-footer-bacground;
 
                 &:hover {
                     cursor: pointer;
-                    background-color: var(--contrast-color);
+                    background-color: $contrast-color;
                 }
             }
 
@@ -52,11 +52,11 @@
 
                         .title {
                             &__blog-link {
-                                color: var(--text-color-footer-bacground);
+                                color: $text-color-footer-bacground;
                                 text-decoration: none;
 
                                 &:hover {
-                                    color: var(--contrast-color)
+                                    color: $contrast-color;
                                 }
                             }
                         }
@@ -67,7 +67,7 @@
                         width: 100%;
                         padding: 0 0 5px;
                         margin: 0;
-                        color: var(--text-color-gray);
+                        color: $text-color-gray;
                     }
                 }
             }

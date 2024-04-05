@@ -1,6 +1,6 @@
 .main {
   line-height: 1.4;
-  background-color: var(--text-color-white);
+  background-color: $text-color-white;
 
   &__title {
     @include title-font-style(2.2rem);
@@ -13,11 +13,11 @@
     height: fit-content;
     border: 1px solid rgb(202, 202, 202);
     margin: -2% 0 4%;
-    background-color: var(--background-color-body);
+    background-color: $background-color-body;
 
     .input {
       &__article-header {
-        background-color: var(--contrast-color-light);
+        background-color: $contrast-color-light;
 
         .article-header {
           &__image {
@@ -37,11 +37,11 @@
             padding: 0 0 0 14px;
             margin: 0;
             font-size: 0.9rem;
-            color: var(--text-color-gray);
+            color: $text-color-gray;
 
             .subtitle {
               &__link {
-                color: var(--text-color-footer-bacground);
+                color: $text-color-footer-bacground;
                 text-decoration: none;
               }
             }
@@ -97,11 +97,11 @@
                         padding: 2% 0 0 2%;
                         margin: 0;
                         font-size: 0.9rem;
-                        color: var(--text-color-gray);
+                        color: $text-color-gray;
 
                         .subtitle {
                           &__link {
-                            color: var(--text-color-footer-bacground);
+                            color: $text-color-footer-bacground;
                             text-decoration: none;
                           }
                         }
@@ -140,7 +140,7 @@
           &__cite {
             padding-left: 40px;
             margin: 3% 0 3% 8%;
-            border-left: 3px solid var(--contrast-color);
+            border-left: 3px solid $contrast-color;
 
             .cite {
               &__phrase {

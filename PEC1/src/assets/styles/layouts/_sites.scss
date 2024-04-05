@@ -16,7 +16,7 @@
         border: 1px solid rgb(202, 202, 202);
         display: flex;
         cursor: pointer;
-        background-color: var(--contrast-color-light);
+        background-color: $contrast-color-light;
 
         &__figure {
             width: 100%;
