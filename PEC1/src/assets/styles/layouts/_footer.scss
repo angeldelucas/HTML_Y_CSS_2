@@ -87,7 +87,7 @@
                     .legal-menu {
                         &__elto:nth-child(2),
                         &__elto:nth-child(1) {
-                            border-right: 2px solid $text-color-white;
+                            border-right: 2px solid rgb(255, 255, 255);
                         }
                     }
                 }

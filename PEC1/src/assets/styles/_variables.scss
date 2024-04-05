@@ -74,14 +74,13 @@ $background-color-body: rgb(247, 247, 247);
   }
 
   &:hover>.site__figure {
-    @if $transform =="axisY" {
+    @if $transform == "axisY" {
       transform: translateY(#{$space});
     }
 
-    @else if $transform =="axisX" {
+    @else if $transform == "axisX" {
       transform: translateX(#{$space});
     }
-
     scale: 1.2;
     width: 250px;
     box-shadow: 0 0 40px rgb(0, 0, 0);
