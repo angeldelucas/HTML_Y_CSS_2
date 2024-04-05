@@ -6,15 +6,18 @@
     .menu {
         @include show-elto;
         width: 100%;
+        display: flex;
         position: sticky;
         top: 0;
         z-index: 1;
-        display: flex;
         justify-content: center;
         background-color: var(--background-color-body);
     
         &__list-options {
             width: 100%;
+            padding: 0;
+            display: flex;
+            list-style-type: none;
             background-color: rgb(170, 170, 170);
     
             .list-options {
