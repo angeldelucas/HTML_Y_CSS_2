@@ -1,16 +1,36 @@
 {
    "extends": [
-      "stylelint-config-recommended-scss",
       "stylelint-config-clean-order/error",
+      "stylelint-config-recommended-scss",
       "stylelint-config-sass-guidelines"
    ],
    "rules": {
-      "declaration-property-value-no-unknown": true,
-      "selector-class-pattern": "^.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
+      "declaration-property-value-no-unknown": [
+         true,
+         {
+            "message": "Poperty value not allowed"
+         }
+      ],
+      "selector-class-pattern": [
+         "^.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
+         {
+            "message": "Expected custom property name to be Block__Element--Modifier"
+         }
+      ],
       "selector-max-compound-selectors": null,
       "max-nesting-depth": null,
-      "custom-property-empty-line-before": "never",
-      "declaration-empty-line-before": "never",
+      "custom-property-empty-line-before": [
+         "never",
+         {
+            "message": "Empty line before custom property not allowed"
+         }
+      ],
+      "declaration-empty-line-before": [
+         "never",
+         {
+            "message": "Empty line before declaration not allowed"
+         }
+      ],
       "declaration-property-unit-allowed-list": {
          "/^border/": [
             "px"
@@ -18,6 +38,7 @@
          "/^font-size/": [
             "rem"
          ]
+         
       },
       "order/properties-order": [
          "width",

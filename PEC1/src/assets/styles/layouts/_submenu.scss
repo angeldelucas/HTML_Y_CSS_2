@@ -1,42 +1,5 @@
 .menu {
-    @include hide-elto;
-    display: flex;
-    justify-content: center;
-    background-color: var(--background-color-body);
-
-    &__list-options {
-        width: 100%;
-        background-color: rgba(170, 170, 170);
-
-        .list-options {
-            &__elto {
-                cursor: pointer;
-                padding: 10% 0;
-                text-align: center;
-
-                .elto {
-                    &__internal-link--large {
-                        @include internal-link;
-                        font-size: large;
-
-                        &:hover {
-                            @include link-over;
-                        }
-                    }
-                }
-                
-                &:hover {
-                    color: var(--text-color-footer-bacground);
-                    background-color: rgb(255, 255, 255);
-                }
-
-                &:hover>.elto__internal-link--large {
-                    color: var(--text-color-footer-bacground);
-                    background-color: rgb(255, 255, 255);
-                }                
-            }
-        }
-    }
+    @include hide-elto;    
 }
 
 @media (min-width: 768px) {
@@ -46,12 +9,43 @@
         position: sticky;
         top: 0;
         z-index: 1;
-
+        display: flex;
+        justify-content: center;
+        background-color: var(--background-color-body);
+    
         &__list-options {
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            list-style-type: none;
+            width: 100%;
+            background-color: rgb(170, 170, 170);
+    
+            .list-options {
+                &__elto {
+                    cursor: pointer;
+                    padding: 2% 0;
+                    text-align: center;
+                    flex: auto;
+    
+                    .elto {
+                        &__internal-link--large {
+                            @include internal-link;
+                            font-size: large;
+    
+                            &:hover {
+                                @include link-over;
+                            }
+                        }
+                    }
+                    
+                    &:hover {
+                        color: var(--text-color-footer-bacground);
+                        background-color: rgb(255, 255, 255);
+                    }
+                    
+                    &:hover>.elto__internal-link--large {
+                        color: var(--text-color-footer-bacground);
+                        background-color: rgb(255, 255, 255);
+                    }                
+                }
+            }
         }
     }
 }
