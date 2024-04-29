@@ -1,0 +1,118 @@
+.footer {
+
+    background-color: rgba(172, 33, 54);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8% 1% 1% 1%;
+    position: relative;
+
+    &__left {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5% 0;
+
+        .left {
+
+            &__logo {
+                width: 120px;
+                height: 40px;
+            }
+
+            &__copyright {
+                margin: 0;
+                color: $contrast-color;
+            }
+        }
+
+    }
+
+    &__options {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        top: 4%;
+        width: 100%;
+
+        .options {
+
+            &__elto {
+                margin: 0 4%;
+
+                .elto {
+
+                    &__internal-link {
+                        @include font-menu();
+                        text-decoration: none;
+                        color: $contrast-color;
+
+                        &:hover {
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__right {
+
+        .right {
+
+            &__menu {
+                margin: 12% 0;
+                padding: 0;
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                width: 100%;
+
+                .menu {
+
+                    &__elto {
+                        margin: 1%;
+
+                        .elto {
+
+                            &__link {
+                                text-decoration: none;
+                                color: $contrast-color;
+
+                                &:hover {
+                                    opacity: 0.7;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 768px) {
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1%;
+
+        &__left {
+            margin: 0;
+        }
+
+        &__options {
+            left: 0;
+            top: inherit;
+        }
+    }
+
+}

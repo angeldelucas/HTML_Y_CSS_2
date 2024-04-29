@@ -1,0 +1,59 @@
+@use "sass:color";
+
+// Variables globales
+$corporative-color: rgba(172, 33, 54);
+$contrast-color: rgb(255, 255, 255);
+$hover-background-color: rgb(255, 218, 225);
+$disabled-corporative-color: rgb(134, 134, 134);
+// $active-corporative-color: ;
+
+// modificación shadow bs
+$box-shadow-sm: 0 .125rem 8rem rgba(0, 0, 0, .075); 
+
+
+@mixin font-menu {
+  font-size: 1.5rem;
+  color: color(display-p3 0.25 0.24 0.24);
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    @include hover-text();
+  }
+
+}
+
+@mixin hover-text {
+  text-shadow: 0 5px 10px color(display-p3 0.71 0.71 0.71);
+}
+
+@mixin hide {
+  // @extend .invisible;
+  visibility: hidden;
+  position: absolute;
+  // inset: 0px;
+}
+
+@mixin show {
+  // @extend .visible; 
+  visibility: visible;
+  position: inherit;
+  // inset: inherit;
+}
+
+@mixin cook-btn {
+  @include button-variant(rgb(255, 255, 255), //$background,
+    rgba(172, 33, 54), //$border,
+    rgba(172, 33, 54), //$color: color-contrast($background),
+    rgb(255, 218, 225), //$hover-background: if($color == $color-contrast-light, shade-color($background, $btn-hover-bg-shade-amount), tint-color($background, $btn-hover-bg-tint-amount)),
+    rgb(255, 218, 225), //$hover-border: if($color == $color-contrast-light, shade-color($border, $btn-hover-border-shade-amount), tint-color($border, $btn-hover-border-tint-amount)),
+    rgba(172, 33, 54), //$hover-color: color-contrast($hover-background),
+    rgba(172, 33, 54), //$active-background: if($color == $color-contrast-light, shade-color($background, $btn-active-bg-shade-amount), tint-color($background, $btn-active-bg-tint-amount)),
+    rgba(172, 33, 54), //$active-border: if($color == $color-contrast-light, shade-color($border, $btn-active-border-shade-amount), tint-color($border, $btn-active-border-tint-amount)),
+    rgb(255, 255, 255), //$active-color: color-contrast($active-background),
+    rgb(134, 134, 134), //$disabled-background: $background,
+    rgb(134, 134, 134), //$disabled-border: $border,
+    rgb(134, 134, 134), //$disabled-color: color-contrast($disabled-background)
+  );
+  
+}
