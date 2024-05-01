@@ -16,7 +16,8 @@
 
  // @import "some-node-module";
  // @import "@some-company/some-node-module";
- @import "bootstrap/scss/bootstrap.scss";
+ @import "npm:@fortawesome/fontawesome-free/css/all.css";
+ @import "bootstrap/scss/bootstrap";
  @import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
 
 
@@ -30,6 +31,7 @@
 @import "layouts/footer";
 @import "layouts/poster";
 @import "layouts/chefs_grid";
+@import "layouts/blog_input";
 @import "layouts/page4";
 
 /**

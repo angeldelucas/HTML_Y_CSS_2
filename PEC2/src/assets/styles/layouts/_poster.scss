@@ -1,50 +1,47 @@
 .poster {
+    margin: 3% 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 3% 0;
+    container-type: inline-size;
 
     &__compose {
-
-        width: 90%;
-        padding: 1%;
+        width: 97%;
         height: 433px;
+        padding: 1%;
         display: flex;
         flex-direction: row;
+        position: relative;
         justify-content: center;
         box-shadow: 0 0 40px color(display-p3 0.91 0.91 0.91);
         background-image: url("../images/background_poster.jpg");
-        position: relative;
 
         .compose {
-
             &__logo {
                 @include hide();
-                height: 0px;
-                width: 0px;
+                width: 0;
+                height: 0;
                 top: -100%;
                 overflow: hidden;
             }
 
             &__logo-movil {
                 @include hide();
-                height: 0px;
-                width: 0px;
+                width: 0;
+                height: 0;
                 top: -100%
             }
 
             &__image-contaier {
-                display: flex;
-                flex-direction: column;
                 width: 33.34%;
                 height: 70%;
-                // max-height: 70%;
-                overflow: hidden;
+                display: flex;
+                flex-direction: column;
                 position: relative;
+                overflow: hidden;
                 transition: all 1500ms ease-in-out;
 
                 .image-contaier {
-
                     &__img {
                         height: 100%;
                         margin: 1%;
@@ -54,22 +51,21 @@
                     &__info {
                         width: 100%;
                         padding: 5%;
+                        display: flex;
+                        flex-direction: column;
                         position: absolute;
                         bottom: 0%;
                         color: $contrast-color;
-                        display: flex;
-                        flex-direction: column;
                         justify-content: flex-end;
 
                         .info {
-
                             &__text {
                                 height: 80%;
                             }
 
                             &__btn {
-                                width: 100%;
                                 @include cook-btn();
+                                width: 100%;
                             }
                         }
                     }
@@ -77,19 +73,69 @@
             }
 
             &__description {
+                width: 100%;
                 padding: 3%;
                 position: absolute;
                 top: 75%;
-                width: 100%;
             }
         }
     }
+
+    &__presentation {
+
+        width: 97%;
+        margin-top: 2%;
+        background-color: $copyright-secondary-bacground;
+        box-shadow: 0 0 40px color(display-p3 0.91 0.91 0.91);
+
+        .presentation {
+
+            &__article {
+
+                .article {
+
+                    &__photo {
+                        position: relative;
+                        margin: 0;
+
+                        .photo {
+
+                            &__img {
+                                min-height: 350px;
+                            }
+
+                            &__author {
+                                @include author();
+                            }
+                        }
+                    }
+
+                    &__text {
+
+                        padding: 1%;
+
+                        >p {
+                            font-size: 2vh;
+                        }
+
+                        .text {
+
+                            &__cite {
+                                @include blockquote-format();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
 }
 
-@media(min-width: 768px) {
 
+// @media(min-width: 768px) {
+@container (min-width: 768px) {
     .poster {
-
         &__compose {
             width: 90%;
 
@@ -104,21 +150,59 @@
                 }
             }
         }
+
+        &__presentation {
+
+            width: 100%;
+
+            .presentation {
+
+                &__article {
+                    display: flex;
+                    flex-direction: row;
+
+                    .article {
+
+                        &__text {
+                            display: flex;
+                            align-items: center;
+                            position: relative;
+
+                            .text {
+
+                                &__title {
+                                    position: absolute;
+                                    top: -3%;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
     }
 
 }
 
-
-@supports (display:grid) {
-
+// @media(min-width: 992px) {
+@container (min-width: 992px) {
     .poster {
 
-        &__compose {
+        &__presentation {
 
+            width: 60%;
+        }
+    }
+}
+
+
+@supports (display:grid) {
+    .poster {
+        &__compose {
             width: 97%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            // grid-template-rows: auto 65% 15%;
             grid-template-rows: 20% 50% 30%;
 
             :nth-child(3) {
@@ -134,7 +218,6 @@
             }
 
             .compose {
-
                 &__logo {
                     @include hide();
                     top: -100%;
@@ -142,12 +225,12 @@
 
                 &__logo-movil {
                     @include show();
+                    width: 100%;
+                    height: 100%;
                     top: inherit;
                     grid-row: 1;
                     grid-column-start: 1;
                     grid-column-end: 4;
-                    width: 100%;
-                    height: 100%;
                 }
 
                 &__image-contaier {
@@ -156,13 +239,13 @@
                 }
 
                 &__description {
+                    height: 100%;
+                    padding: 2%;
                     position: inherit;
                     top: inherit;
-                    padding: 2%;
                     grid-row: 3;
                     grid-column-start: 1;
                     grid-column-end: 4;
-                    height: 100%;
 
 
                     >p {
@@ -173,11 +256,10 @@
         }
     }
 
-    @media(min-width: 768px) {
+    // @media(min-width: 768px) {
+    @container (min-width: 768px) {
         .poster {
-
             &__compose {
-
                 width: 100%;
                 height: 50lvh;
                 max-width: inherit;
@@ -189,7 +271,6 @@
                 position: inherit;
 
                 .compose {
-
                     &__logo {
                         @include show();
                         grid-row: 2;
@@ -221,7 +302,6 @@
                         }
 
                         .image-contaier {
-
                             &__img {
                                 height: auto;
                                 overflow: initial;
@@ -231,14 +311,14 @@
                             }
 
                             &__info {
+                                @include hide();
                                 height: 100%;
                                 padding: 10%;
-                                @include hide();
+                                display: flex;
+                                flex-direction: column;
                                 bottom: 0%;
                                 color: $contrast-color;
                                 transition: all 1500ms ease-in-out;
-                                display: flex;
-                                flex-direction: column;
                                 justify-content: center;
                             }
 
@@ -295,10 +375,9 @@
         }
     }
 
-    @media(min-width: 992px) {
-
+    // @media(min-width: 992px) {
+    @container (min-width: 992px) {
         .poster {
-
             &__compose {
                 width: 60%;
                 height: 65lvh;
@@ -309,7 +388,6 @@
 }
 
 .poster__compose:has(.compose__image-contaier:hover)>.compose__image-contaier:not(:hover) {
-
     opacity: 0.5;
     scale: 0.9;
     filter: grayscale(80%);

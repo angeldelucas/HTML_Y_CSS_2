@@ -1,21 +1,18 @@
 .footer {
-
-    background-color: $corporative-color;
+    padding: 8% 1% 1%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 8% 1% 1% 1%;
     position: relative;
+    background-color: $corporative-color;
+    align-items: center;
 
     &__left {
-
+        margin: 5% 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 5% 0;
 
         .left {
-
             &__logo {
                 width: 120px;
                 height: 40px;
@@ -31,24 +28,22 @@
     }
 
     &__options {
-        margin: 0;
+        width: 100%;
         padding: 0;
-        list-style: none;
+        margin: 0;
         display: flex;
         flex-direction: row;
-        justify-content: center;
         position: absolute;
-        left: 0;
         top: 4%;
-        width: 100%;
+        left: 0;
+        list-style: none;
+        justify-content: center;
 
         .options {
-
             &__elto {
                 margin: 0 4%;
 
                 .elto {
-
                     &__internal-link {
                         @include font-menu();
                         text-decoration: none;
@@ -64,25 +59,21 @@
     }
 
     &__right {
-
         .right {
-
             &__menu {
-                margin: 12% 0;
+                width: 100%;
                 padding: 0;
-                list-style: none;
+                margin: 12% 0;
                 display: flex;
                 flex-direction: row;
+                list-style: none;
                 justify-content: center;
-                width: 100%;
 
                 .menu {
-
                     &__elto {
                         margin: 1%;
 
                         .elto {
-
                             &__link {
                                 text-decoration: none;
                                 color: $contrast-color;
@@ -101,22 +92,20 @@
 }
 
 @media(min-width: 768px) {
-
     .footer {
+        padding: 1%;
         flex-direction: row;
         justify-content: space-between;
-        padding: 1%;
 
         &__left {
             margin: 0;
         }
 
         &__options {
-            left: 0;
             top: inherit;
+            left: 0;
 
             .options {
-
                 &__elto {
                     margin: 0 2%;
                 }

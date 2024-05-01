@@ -1,0 +1,66 @@
+.input {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    container-type: inline-size;
+
+    &__intro {
+        padding-bottom: 2%;
+        background-color: $copyright-secondary-bacground;
+        box-shadow: 0 0 40px color(display-p3 0.91 0.91 0.91);
+    }
+}
+
+@container (min-width: 768px) {
+
+    .input {
+
+        >* {
+            width: 60%;
+        }
+    }
+}
+
+:where(figure) {
+    position: relative;
+
+    :is(img) {
+        width: 100%;
+    }
+
+    :is(figcaption) {
+        @include author();
+    }
+
+    ~:is(p) {
+        font-weight: bold;
+    }
+
+    ~* {
+        padding: 0% 2%;
+    }
+}
+
+:is(p, li) {
+    font-size: 2vh;
+}
+
+:is(h2) {
+    margin: 3% 0 1% 0;
+}
+
+.input__intro:has(blockquote) {
+
+    >blockquote {
+        @include blockquote-format();
+    }
+}
+
+.input__intro:has(h4) > h4{
+
+    font-size: 1.8vh;
+}
+
+// }

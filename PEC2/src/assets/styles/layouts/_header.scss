@@ -1,12 +1,10 @@
 .header {
-    
     &__nav {
+        width: 100%;
         display: flex;
         align-items: center;
-        width: 100%;
 
         .nav {
-
             &__logo {
                 @include hide();
                 height: fit-content;
@@ -28,7 +26,6 @@
                 padding: 3%;
 
                 .dropdown {
-
                     &__btn {
                         @include hide();
                     }
@@ -42,13 +39,11 @@
                         list-style: none;
 
                         .options {
-
                             &__elto {
-                                margin-top: 2rem;
                                 width: 100%;
+                                margin-top: 2rem;
 
                                 .elto {
-
                                     &__internal-link {
                                         @include font-menu();
                                     }
@@ -67,17 +62,13 @@
 }
 
 @media(min-width: 768px) {
-
     .header {
-
         height: auto;
 
         &__nav {
-
             padding: 1%;
 
             .nav {
-
                 &__logo {
                     @include show();
                 }
@@ -93,18 +84,15 @@
                 &__options {
 
                     @include show();
-
+                    height: fit-content;
                     display: flex;
                     list-style: none;
-                    height: fit-content;
 
                     .options {
-
                         &__elto {
                             margin: 2rem;
 
                             .elto {
-
                                 &__internal-link {
                                     @include font-menu();
                                 }
@@ -115,14 +103,13 @@
 
                 &__dropdown {
                     @include hide();
-                    inset: 0px;
+                    inset: 0;
 
                     .dropdown {
-
                         &__options {
                             visibility: hidden !important;
                             position: absolute;
-                            inset: 0px;
+                            inset: 0;
                         }
                     }
                 }

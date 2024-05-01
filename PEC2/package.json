@@ -53,6 +53,7 @@
     "stylelint-scss": "^6.2.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.2",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "stylelint-config-clean-order": "^5.4.2"

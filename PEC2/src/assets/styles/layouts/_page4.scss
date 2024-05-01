@@ -1,9 +1,8 @@
 .poster-container {
-
+        height: 60%;
         margin: 2%;
         display: flex;
         justify-content: center;
-        height: 60%;
 
         &__images {
             width: 60%;
@@ -11,7 +10,6 @@
             flex-direction: row;
 
             .images {
-
                 &__container {
                     display: flex;
                     flex-direction: column;
@@ -25,8 +23,8 @@
                     }
 
                     &:hover>.container__img {
-                        height: 100%;
                         width: 80%;
+                        height: 100%;
                         position: inherit;
                         right: inherit;
                         box-shadow: 0 0 20px $contrast-color;
@@ -34,12 +32,15 @@
                     }
 
                     .container {
-
                         &__img {
                             height: 100%;
                             position: relative;
                             right: 50%;
                             transition: all 800ms ease-in-out;
+                        }
+
+                        &__info{
+                            @include hide();
                         }
                     }
                 }
