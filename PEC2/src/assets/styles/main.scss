@@ -2,11 +2,10 @@
  * Use this file to import partials.
  * Do not include SCSS code in this file.
  */
-
+ 
 /**
  * Import variables
  */
-
 @import "variables";
 
 /**
@@ -15,9 +14,11 @@
  * see commented examples below
  */
 
-// @import "some-node-module";
-// @import "@some-company/some-node-module";
-@import "bootstrap/scss/bootstrap.scss";
+ // @import "some-node-module";
+ // @import "@some-company/some-node-module";
+ @import "bootstrap/scss/bootstrap.scss";
+ @import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
+
 
 /**
  * Import layouts
@@ -28,6 +29,8 @@
 @import "layouts/header";
 @import "layouts/footer";
 @import "layouts/poster";
+@import "layouts/chefs_grid";
+@import "layouts/page4";
 
 /**
  * Do NOT include anything else in this file!

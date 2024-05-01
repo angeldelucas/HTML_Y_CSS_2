@@ -3,26 +3,33 @@
     flex-direction: column;
     align-items: center;
     margin: 3% 0;
-    height: 65vh;    
 
     &__compose {
 
         width: 90%;
+        padding: 1%;
+        height: 433px;
         display: flex;
         flex-direction: row;
         justify-content: center;
-        background-color: color(display-p3 0.96 0.96 0.96);
         box-shadow: 0 0 40px color(display-p3 0.91 0.91 0.91);
+        background-image: url("../images/background_poster.jpg");
+        position: relative;
 
         .compose {
 
             &__logo {
                 @include hide();
-                top: -100%
+                height: 0px;
+                width: 0px;
+                top: -100%;
+                overflow: hidden;
             }
 
             &__logo-movil {
                 @include hide();
+                height: 0px;
+                width: 0px;
                 top: -100%
             }
 
@@ -30,17 +37,18 @@
                 display: flex;
                 flex-direction: column;
                 width: 33.34%;
-                max-height: 100%;
+                height: 70%;
+                // max-height: 70%;
                 overflow: hidden;
                 position: relative;
-                margin: 1%;
                 transition: all 1500ms ease-in-out;
 
                 .image-contaier {
 
                     &__img {
                         height: 100%;
-                        overflow: hidden;                        
+                        margin: 1%;
+                        overflow: hidden;
                     }
 
                     &__info {
@@ -56,7 +64,7 @@
                         .info {
 
                             &__text {
-                                height: 100%;
+                                height: 80%;
                             }
 
                             &__btn {
@@ -67,17 +75,34 @@
                     }
                 }
             }
-        }
 
+            &__description {
+                padding: 3%;
+                position: absolute;
+                top: 75%;
+                width: 100%;
+            }
+        }
     }
 }
 
-@media(min-width: 992px) {
+@media(min-width: 768px) {
 
     .poster {
 
         &__compose {
-            width: 60%;
+            width: 90%;
+
+            .compose {
+                &__image-contaier {
+                    height: 100%;
+                }
+
+                &__description {
+                    position: inherit;
+                    top: 10%;
+                }
+            }
         }
     }
 
@@ -91,10 +116,10 @@
         &__compose {
 
             width: 97%;
-            // height: 60%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto 1fr;
+            // grid-template-rows: auto 65% 15%;
+            grid-template-rows: 20% 50% 30%;
 
             :nth-child(3) {
                 grid-column: 1;
@@ -122,28 +147,46 @@
                     grid-column-start: 1;
                     grid-column-end: 4;
                     width: 100%;
+                    height: 100%;
                 }
 
                 &__image-contaier {
                     width: 100%;
+                    height: 100%;
+                }
+
+                &__description {
+                    position: inherit;
+                    top: inherit;
+                    padding: 2%;
+                    grid-row: 3;
+                    grid-column-start: 1;
+                    grid-column-end: 4;
+                    height: 100%;
+
+
+                    >p {
+                        font-size: 2vh;
+                    }
                 }
             }
-
         }
     }
 
     @media(min-width: 768px) {
         .poster {
-            // height: 120vh;
 
             &__compose {
 
-                width: 90%;
-                height: 60%;
+                width: 100%;
+                height: 50lvh;
+                max-width: inherit;
                 grid-template-columns: repeat(5, 1fr);
                 grid-template-rows: repeat(3, 1fr);
                 column-gap: 2%;
                 row-gap: 3%;
+                padding: 0;
+                position: inherit;
 
                 .compose {
 
@@ -165,6 +208,7 @@
                     }
 
                     &__image-contaier {
+                        height: 100%;
                         margin: 0;
                         transition: all 1500ms ease-in-out;
 
@@ -173,22 +217,24 @@
                             position: absolute;
                             opacity: 1;
                             scale: 1.1;
-                            background-color: rgba(172, 33, 54, 0.9);
+                            background-color: $corporative-color-hover;
                         }
 
                         .image-contaier {
 
                             &__img {
-                                height: inherit;
+                                height: auto;
                                 overflow: initial;
                                 z-index: 100;
                                 transition: all 1500ms ease-in-out;
+                                margin: 0;
                             }
 
                             &__info {
                                 height: 100%;
                                 padding: 10%;
                                 @include hide();
+                                bottom: 0%;
                                 color: $contrast-color;
                                 transition: all 1500ms ease-in-out;
                                 display: flex;
@@ -200,6 +246,13 @@
                                 @include cook-btn();
                             }
                         }
+                    }
+
+                    &__description {
+                        grid-row: 3;
+                        grid-column-start: 2;
+                        grid-column-end: 4;
+                        width: 100%;
                     }
                 }
 
@@ -248,24 +301,11 @@
 
             &__compose {
                 width: 60%;
-                // height: 120vh;
+                height: 65lvh;
             }
         }
 
     }
-
-    // @media(min-width: 1400px) {
-
-    //     .poster {
-
-    //         height: 110vh;
-
-    //         // &__compose {
-    //         //     width: 60%;
-    //         // }
-    //     }
-
-    // }
 }
 
 .poster__compose:has(.compose__image-contaier:hover)>.compose__image-contaier:not(:hover) {

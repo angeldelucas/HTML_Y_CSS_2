@@ -1,14 +1,12 @@
 @use "sass:color";
 
 // Variables globales
-$corporative-color: rgba(172, 33, 54);
-$contrast-color: rgb(255, 255, 255);
-$hover-background-color: rgb(255, 218, 225);
-$disabled-corporative-color: rgb(134, 134, 134);
-// $active-corporative-color: ;
-
-// modificación shadow bs
-$box-shadow-sm: 0 .125rem 8rem rgba(0, 0, 0, .075); 
+$corporative-color: rgb(172, 33, 54);
+$corporative-color-hover: hwb(351 13% 33% / 0.8);
+$contrast-color: hwb(0 100% 0%);
+$hover-background-color: hwb(349 85% 0%);
+$disabled-corporative-color: hwb(0 53% 47%);
+$copyright-bacground: hwb(0 45% 19% / 0.3);
 
 
 @mixin font-menu {
@@ -28,32 +26,43 @@ $box-shadow-sm: 0 .125rem 8rem rgba(0, 0, 0, .075);
 }
 
 @mixin hide {
-  // @extend .invisible;
   visibility: hidden;
   position: absolute;
-  // inset: 0px;
 }
 
 @mixin show {
-  // @extend .visible; 
   visibility: visible;
   position: inherit;
-  // inset: inherit;
 }
 
+// modificación shadow bs
+$box-shadow-sm: 0 .125rem 8rem hwb(0 0% 100% / 0.075); 
+
+//Personalización de componente bootstrap - card
+$enable-shadows: "true";
+$card-title-color: $contrast-color;
+$card-color: $contrast-color;
+$card-bg: $corporative-color;
+$card-border-radius: none;
+$card-box-shadow: 0 .125rem 8rem hwb(0 0% 100% / 0.5);
+
+
+// mixin para personalización de componente bootstrap - button
 @mixin cook-btn {
-  @include button-variant(rgb(255, 255, 255), //$background,
-    rgba(172, 33, 54), //$border,
-    rgba(172, 33, 54), //$color: color-contrast($background),
-    rgb(255, 218, 225), //$hover-background: if($color == $color-contrast-light, shade-color($background, $btn-hover-bg-shade-amount), tint-color($background, $btn-hover-bg-tint-amount)),
-    rgb(255, 218, 225), //$hover-border: if($color == $color-contrast-light, shade-color($border, $btn-hover-border-shade-amount), tint-color($border, $btn-hover-border-tint-amount)),
-    rgba(172, 33, 54), //$hover-color: color-contrast($hover-background),
-    rgba(172, 33, 54), //$active-background: if($color == $color-contrast-light, shade-color($background, $btn-active-bg-shade-amount), tint-color($background, $btn-active-bg-tint-amount)),
-    rgba(172, 33, 54), //$active-border: if($color == $color-contrast-light, shade-color($border, $btn-active-border-shade-amount), tint-color($border, $btn-active-border-tint-amount)),
-    rgb(255, 255, 255), //$active-color: color-contrast($active-background),
-    rgb(134, 134, 134), //$disabled-background: $background,
-    rgb(134, 134, 134), //$disabled-border: $border,
-    rgb(134, 134, 134), //$disabled-color: color-contrast($disabled-background)
+  @include button-variant($contrast-color, //$background,
+    $corporative-color, //$border,
+    $corporative-color, //$color: color-contrast($background),
+    $hover-background-color, //$hover-background: if($color == $color-contrast-light, shade-color($background, $btn-hover-bg-shade-amount), tint-color($background, $btn-hover-bg-tint-amount)),
+    $hover-background-color, //$hover-border: if($color == $color-contrast-light, shade-color($border, $btn-hover-border-shade-amount), tint-color($border, $btn-hover-border-tint-amount)),
+    $corporative-color, //$hover-color: color-contrast($hover-background),
+    $corporative-color, //$active-background: if($color == $color-contrast-light, shade-color($background, $btn-active-bg-shade-amount), tint-color($background, $btn-active-bg-tint-amount)),
+    $corporative-color, //$active-border: if($color == $color-contrast-light, shade-color($border, $btn-active-border-shade-amount), tint-color($border, $btn-active-border-tint-amount)),
+    $contrast-color, //$active-color: color-contrast($active-background),
+    $disabled-corporative-color, //$disabled-background: $background,
+    $disabled-corporative-color, //$disabled-border: $border,
+    $disabled-corporative-color, //$disabled-color: color-contrast($disabled-background)
   );
+
+  
   
 }
