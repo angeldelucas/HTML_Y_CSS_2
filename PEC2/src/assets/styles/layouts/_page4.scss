@@ -15,15 +15,20 @@
 
         &__images {
             height: 60dvh;
+            min-height: 330px;
             @include width($cook-master-breakpoints);
             display: flex;
             flex-direction: row;
+            justify-content: center;
+            margin-bottom: 2%;
 
             container-type: inline-size;
             container-name: images;
 
             .images {
                 &__container {
+                    width: 15%;
+                    
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -31,7 +36,7 @@
                     transition: all 800ms ease-in-out;
 
                     &:hover {
-                        width: 100%;
+                        width: 30%;
                         scale: 1.1;
                     }
 
@@ -123,7 +128,7 @@
                     background-image: url("../images/6203.jpg");
                     background-size: cover;
                     opacity: 0.9;
-                    margin-left: 3%;
+                    // margin-left: 3%;
                     padding: 3%;
 
                     .description {
@@ -256,10 +261,14 @@
     @container images (max-width: 768px) {
         .poster-container {
 
+
             &__images {
 
+                
                 .images {
                     &__container {
+
+                        width: 20%;
 
                         &:hover {
                             width: 200%;
@@ -295,6 +304,7 @@
 
                     &__video-container {
                         width: 80%; 
+                        max-width: 370px;
                         height: 30%;
                         perspective: none;
                         position: inherit;
@@ -327,11 +337,11 @@
 @layer selected {
 
     .selected {
-        width: 100%;
+        width: 80%;
         scale: 1.1;
 
         @container images (max-width: 768px) {
-            width: 200%;
+            width: 80%;
             height: 80%;
             position: relative;
             scale: 1.1;

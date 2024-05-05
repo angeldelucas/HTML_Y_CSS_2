@@ -235,7 +235,7 @@
     @container (min-width: 768px) {
         .poster {
             &__compose {
-                height: 50lvh;
+                // height: 50lvh;
                 max-width: inherit;
                 grid-template-columns: repeat(5, 1fr);
                 grid-template-rows: repeat(3, 1fr);
