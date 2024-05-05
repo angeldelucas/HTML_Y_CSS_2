@@ -1,12 +1,15 @@
+
+
 .poster {
     margin: 3% 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     container-type: inline-size;
+    padding: 1%;
 
     &__compose {
-        width: 97%;
+        @include width($cook-master-breakpoints);
         height: 433px;
         padding: 1%;
         display: flex;
@@ -83,9 +86,9 @@
 
     &__presentation {
 
-        width: 97%;
+        @include width($cook-master-breakpoints);
         margin-top: 2%;
-        background-color: $copyright-secondary-bacground;
+        background-color: $corporative-secondary-bacground;
         box-shadow: 0 0 40px color(display-p3 0.91 0.91 0.91);
 
         .presentation {
@@ -114,10 +117,6 @@
 
                         padding: 1%;
 
-                        >p {
-                            font-size: 2vh;
-                        }
-
                         .text {
 
                             &__cite {
@@ -133,11 +132,9 @@
 }
 
 
-// @media(min-width: 768px) {
 @container (min-width: 768px) {
     .poster {
         &__compose {
-            width: 90%;
 
             .compose {
                 &__image-contaier {
@@ -152,8 +149,6 @@
         }
 
         &__presentation {
-
-            width: 100%;
 
             .presentation {
 
@@ -177,7 +172,6 @@
                             }
                         }
                     }
-
                 }
             }
         }
@@ -185,22 +179,9 @@
 
 }
 
-// @media(min-width: 992px) {
-@container (min-width: 992px) {
-    .poster {
-
-        &__presentation {
-
-            width: 60%;
-        }
-    }
-}
-
-
 @supports (display:grid) {
     .poster {
         &__compose {
-            width: 97%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 20% 50% 30%;
@@ -246,21 +227,14 @@
                     grid-row: 3;
                     grid-column-start: 1;
                     grid-column-end: 4;
-
-
-                    >p {
-                        font-size: 2vh;
-                    }
                 }
             }
         }
     }
 
-    // @media(min-width: 768px) {
     @container (min-width: 768px) {
         .poster {
             &__compose {
-                width: 100%;
                 height: 50lvh;
                 max-width: inherit;
                 grid-template-columns: repeat(5, 1fr);
@@ -374,12 +348,10 @@
         }
     }
 
-    // @media(min-width: 992px) {
     @container (min-width: 992px) {
         .poster {
             &__compose {
-                width: 60%;
-                height: 65lvh;
+                height: 70lvh;
             }
         }
 

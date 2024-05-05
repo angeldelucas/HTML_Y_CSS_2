@@ -3,11 +3,10 @@
 }
 
 body {
-  height: 100dvh;
+  // height: 100dvh;
   margin: 0;
 }
 
 html{
-  // font-size: calc(8px + 0.390625vw); 
   font-size: calc-font-size(); 
 }
