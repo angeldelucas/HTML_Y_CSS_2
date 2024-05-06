@@ -28,27 +28,27 @@ import * as bootstrap from 'bootstrap';
     1: {
       title: 'Delicias del mar',
       author: 'María Dueñas - 2019',
-      text: 'Con influencias del mar y de su tierra natal, María se proclamó ganadora del certamen con este exquisito plato'
+      text: 'Esta receta combina la frescura del marisco con la variedad de verduras, creando un plato vibrante y delicioso. Los mariscos, como camarones o vieiras, se mezclan con una selección de verduras como pimientos, calabacines y champiñones. Todo se saltea en aceite de oliva con ajo y hierbas aromáticas, creando una fusión de sabores. La combinación se sirve caliente, realzando la frescura de los ingredientes y ofreciendo una experiencia culinaria única que combina la tierra y el mar.'
     },
     2: {
       title: 'De la huerta',
       author: 'Pedro García - 2020',
-      text: 'Exquisita vuelta de tuerca al concepto de ensalda que conquistó el palador del jurado'
+      text: 'Esta receta aprovecha la frescura y diversidad de los productos del huerto para crear un plato que celebra la naturaleza. Verduras como tomates, pimientos, calabacines y berenjenas son cosechadas directamente del huerto y preparadas con hierbas aromáticas y aceite de oliva. Los ingredientes se combinan y se asan lentamente en el horno, realzando sus sabores naturales y creando una deliciosa sinfonía de sabores. El resultado es un plato reconfortante y nutritivo que captura la esencia misma del campo y ofrece una experiencia culinaria auténtica y satisfactoria.'
     },
     3: {
       title: 'Dulcura en verde',
       author: 'David Gómez - 2021',
-      text: 'En la sencillez y los pequeños detalles reside el éxito, y este plato refleja a la perfección ambos conceptos'
+      text: 'En la sencillez y los pequeños detalles reside el éxito. Esta receta presenta una colorida combinación de verduras frescas, como zanahorias, calabacines, berenjenas y pimientos, sazonadas con ajo, aceite de oliva y hierbas provenzales. Tras ser cortadas y sazonadas, las verduras se hornean hasta que estén ligeramente doradas. Durante la cocción, los aromas se mezclan, creando una fragancia irresistible. Las verduras al horno se sirven calientes, ofreciendo un plato sabroso y nutritivo, perfecto como acompañamiento o plato principal. Esta receta resalta la frescura y versatilidad de las verduras.'
     },
     4: {
       title: 'Delicias del Japón',
       author: 'Carla Ruíz - 2022',
-      text: 'Mezcla de sabores, tradiciones y costrumbres que consigue un merecido premio'
+      text: 'Esta receta japonesa fusiona sabores delicados y técnicas precisas para crear una experiencia culinaria única. Ingredientes frescos como el pescado crudo, arroz de sushi y algas nori se combinan con destrezas en el corte y presentación. El sushi, cuidadosamente enrollado o moldeado a mano, se sirve con wasabi y salsa de soja para realzar su sabor. Cada bocado es una explosión de frescura y armonía, reflejando la atención meticulosa a los detalles que caracteriza a la cocina japonesa.'
     },
     5: {
       title: 'Dulce de miel',
       author: 'Natalia Rosi - 2023',
-      text: 'La prueba de que un postre también puede ser un ganador en un concurso de cocina'
+      text: 'Este postre con miel es una deliciosa combinación de dulzura natural y sabores reconfortantes. La miel, un ingrediente protagonista, se mezcla con mantequilla, harina y huevos para crear una masa suave y aromática. Esta mezcla se vierte sobre frutas frescas, como peras o manzanas, y se hornea hasta que estén doradas y burbujeantes. Al servir, se rocía con un toque adicional de miel, creando un postre indulgente que resalta la riqueza y versatilidad de este delicioso ingrediente natural.'
     }
   }
 
@@ -94,8 +94,7 @@ import * as bootstrap from 'bootstrap';
     window.scrollTo(0, receipContainer.offsetTop); 
   };
 
-  let buttons = document.getElementsByClassName("info__btn");
-  // let navButtons = document.getElementsByClassName("nav__btn");
+  let buttons = document.querySelectorAll(".container__info > .info__btn");
   let videos = document.getElementsByClassName("video-container__video");
   let imagesContainer = document.getElementsByClassName("images__container");
   let images = document.getElementsByClassName("container__img");

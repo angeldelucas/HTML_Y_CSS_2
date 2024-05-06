@@ -1,4 +1,4 @@
-:where(main){
+:where(main) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +28,7 @@
         justify-content: center;
         column-gap: 2%;
 
-        .input__main-article{
+        .input__main-article {
             grid-column-start: 1;
         }
     }
@@ -42,7 +42,7 @@
     }
 }
 
-.input__recents-articles:has(section){
+.input__recents-articles:has(section) {
 
     >section {
         margin-bottom: 4%;
@@ -51,43 +51,14 @@
     }
 }
 
-:is(figure) {
-    position: relative;
+.recents-articles__article:has(div>h3>a) {
 
-    :is(img) {
-        width: 100%;
-    }
-
-    :is(figcaption) {
-        @include author();
-    }
-
-    ~:is(p) {
-        font-weight: bold;
-    }
-
-    ~* {
-        padding: 0% 2%;
-    }
-}
-
-:is(h1) {
-    font-size: $title-font-size;
-}
-
-:is(h2) {
-    margin: 3% 0 1% 0;
-}
-
-:is(h4) {
-    font-size: small;
-}
-
-:is(a){
-    text-decoration: none;
-
-    &:hover{
-        color: $corporative-color-hover !important;
+    div>h3>a {
+        text-decoration: none;
+        
+        &:hover {
+            color: $corporative-color-hover;
+        }
     }
 }
 
@@ -111,11 +82,11 @@
         flex-direction: column;
         margin-top: 10%;
 
-        >h2{
+        >h2 {
             top: -5%;
         }
 
-        >section:nth-child(3){
+        >section:nth-child(3) {
             margin-left: 2%;
             margin-right: 2%;
         }
@@ -129,7 +100,7 @@
             display: flex;
             flex-direction: row;
 
-            >h2{
+            >h2 {
                 top: -20%;
             }
         }
