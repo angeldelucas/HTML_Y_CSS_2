@@ -61,12 +61,11 @@ import * as bootstrap from 'bootstrap';
     let receipContainer = document.querySelector(".poster-container__recipes");
     let video = document.getElementById(receipeVideoId);
     let receipeNumber = btnId.split('-')[2];
-    let header = document.querySelector("header");
-    let title = document.querySelector(".hof-title");
 
 
     for (let index = 0; index < videos.length; index++) {
       videos[index].style.zIndex = 0;
+      videos[index].style.opacity = 0;
     }    
 
     for (let index = 0; index < imagesContainer.length; index++) {
@@ -86,18 +85,17 @@ import * as bootstrap from 'bootstrap';
     info.className = "container__info selected-info";
 
     video.style.zIndex = 10;
+    video.style.opacity = 10;
     receipContainer.className = "poster-container__recipes " + recipesImages[receipeNumber];
     recipeTitle.textContent = recipesDescription[receipeNumber].title;
     recipeAuthor.textContent = recipesDescription[receipeNumber].author;
     recipeText.textContent = recipesDescription[receipeNumber].text;
     
-    // window.scrollTo(0, receipContainer.offsetHeight); //offsetTop
-    // window.scrollTo(0, receipContainer.offsetTop + receipContainer.clientHeight*0.02 + header.clientHeight + title.clientHeight); //offsetTop
-    window.scrollTo(0, receipContainer.offsetTop); //offsetTop
+    window.scrollTo(0, receipContainer.offsetTop); 
   };
 
   let buttons = document.getElementsByClassName("info__btn");
-  let navButtons = document.getElementsByClassName("nav__btn");
+  // let navButtons = document.getElementsByClassName("nav__btn");
   let videos = document.getElementsByClassName("video-container__video");
   let imagesContainer = document.getElementsByClassName("images__container");
   let images = document.getElementsByClassName("container__img");

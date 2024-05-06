@@ -1,17 +1,22 @@
+// En esta vista al aplicar capas para elemtos seleccionados cuando añadimos la clase
+// selected a ciertos elementos, las reglas definidas en esa layer pisan a las aplicadas 
+// a las reglas en la clase not-selected. En este caso he añadido java script para aplicar
+// esa clase.
+
 @layer not-selected, selected;
 
 @layer not-selected {
 
+    .page4-title {
+        font-size: $title-font-size !important;
+    }
+
     .poster-container {
         height: 60%;
-        margin: 2% 0;
+        margin: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        // container-type: inline-size;
-        // container-type: normal;
-        // container-name: poster;
-        // container-type: initial;
 
         &__images {
             height: 60dvh;
@@ -20,15 +25,14 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
+            margin-top: 2%;
             margin-bottom: 2%;
-
             container-type: inline-size;
             container-name: images;
 
             .images {
                 &__container {
                     width: 15%;
-                    
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -45,7 +49,7 @@
                         height: 100%;
                         position: inherit;
                         right: inherit;
-                        box-shadow: 0 0 20px $contrast-color;
+                        box-shadow: $box-shadow-sm;
                         filter: brightness(150%);
 
                         ~.container__info {
@@ -101,103 +105,74 @@
         &__recipes {
             height: 100dvh;
             width: 100%;
+            box-shadow: $box-shadow-sm;
             margin-top: 2%;
             padding: 2%;
             background-image: url("../images/ganador_2023.jpg");
             background-size: cover;
-            background-position: 50%;
+            background-position: 60%;
             display: flex;
-            flex-direction: row;
+            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
             transition: all 800ms ease-in-out;
-            // position: relative;
             container-type: inline-size;
             container-name: recipes;
 
+
+
+            :is(.form-check-input:checked) {
+
+                ~.recipes__description {
+                    visibility: hidden;
+                    opacity: 0;
+                }
+
+                ~.flex-row>.form-check-label {
+                    transition: all 800ms ease-in-out;
+                    transform: rotate(180deg);
+                }
+            }
+
             .recipes {
 
-                &__nav {
-                    top: 3%;
+                &__arrow {
+                    background-color: $corporative-color;
+                    color: $contrast-color;
+                    border-radius: 50px;
+                    font-size: 1.2rem;
+
+                    >label:hover {
+                        cursor: pointer;
+                    }
                 }
 
                 &__description {
                     width: 30%;
-                    height: 70%;
-                    // position: relative;
+                    height: 100%;
                     background-image: url("../images/6203.jpg");
                     background-size: cover;
                     opacity: 0.9;
-                    // margin-left: 3%;
-                    padding: 3%;
+                    padding: 1%;
+                    position: inherit;
+                    top: inherit;
+                    opacity: 1;
+                    transition: all 800ms ease-in-out;
+
+
 
                     .description {
 
-                        // &__title{
-
-                        // }
-
-                        // &__author{
-
-                        // }
 
                         &__text {
                             font-size: 1.5rem;
                         }
                     }
-
-                    // .image-container {
-
-                    //     &__figure {
-                    //         width: 100%;
-                    //         height: 100%;
-                    //         perspective: 100px;
-                    //         position: absolute !important;
-                    //         // top: 0;
-                    //         margin: 0 0 0 60px !important;
-                    //         perspective: 95px;
-                    //         padding: 0% !important;
-                    //         z-index: 0;
-
-
-                    //         .figure {
-                    //             &__img {
-                    //                 width: 100%;
-                    //                 height: 100%;
-                    //                 rotate: 45deg;
-                    //                 position: absolute;
-                    //                 transform-style: preserve-3d;
-                    //                 transform: rotateY(2deg);
-                    //             }
-
-                    //             &__author {
-                    //                 @include author;
-                    //                 rotate: 45deg;
-                    //                 position: absolute;
-                    //                 transform-style: preserve-3d;
-                    //                 transform: rotateY(2deg);
-                    //                 bottom: 4% !important;
-                    //                 right: 5% !important;
-                    //             }
-                    //         }
-                    //     }
-
-
-                    // }
                 }
 
-                // &__description{
-                //     width: 50%;
-                //     height: 100%;
-                //     background-color: aqua;
-                // }
-
                 &__video-container {
-                    width: 30%;
-                    height: 50%;
-                    perspective: 100px;
-                    // position: relative;
-                    margin-right: 60px;
+                    height: 100%;
+                    margin-top: 60px;
                     perspective: 95px;
                     display: flex;
                     flex-direction: column;
@@ -207,10 +182,7 @@
                         &__video {
                             width: 100%;
                             height: 100%;
-                            rotate: 45deg;
                             position: absolute;
-                            transform-style: preserve-3d;
-                            transform: rotateY(-2deg);
                             z-index: 0;
                         }
                     }
@@ -247,13 +219,12 @@
         filter: grayscale(80%);
     }
 
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
 
         .poster-container {
 
             &__recipes {
-                background-color: aqua;
-                flex-direction: column;
+                align-items: flex-start;
             }
         }
     }
@@ -264,7 +235,7 @@
 
             &__images {
 
-                
+
                 .images {
                     &__container {
 
@@ -285,27 +256,19 @@
 
     @container recipes (max-width: 768px) {
 
-        .poster-container__recipes{
-            flex-direction: column;
-        }
-        
         .poster-container {
 
             &__recipes {
 
-                flex-direction: column;
-
                 .recipes {
 
                     &__description {
-                        height: auto;
+                        height: 100%;
                         width: 80%;
+
                     }
 
                     &__video-container {
-                        width: 80%; 
-                        max-width: 370px;
-                        height: 30%;
                         perspective: none;
                         position: inherit;
                         margin-right: 0px;
@@ -337,7 +300,7 @@
 @layer selected {
 
     .selected {
-        width: 80%;
+        width: 50%;
         scale: 1.1;
 
         @container images (max-width: 768px) {
@@ -351,11 +314,11 @@
 
     .selected-img {
 
-        width: 80%;
+        width: 60%;
         height: 100%;
         position: inherit;
         right: inherit;
-        box-shadow: 0 0 20px $contrast-color;
+        box-shadow: $box-shadow-sm;
         filter: brightness(150%);
     }
 

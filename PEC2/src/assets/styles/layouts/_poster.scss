@@ -16,7 +16,6 @@
         flex-direction: row;
         position: relative;
         justify-content: center;
-        box-shadow: 0 0 40px color(display-p3 0.91 0.91 0.91);
         background-image: url("../images/background_poster.jpg");
 
         .compose {
@@ -80,6 +79,13 @@
                 padding: 3%;
                 position: absolute;
                 top: 75%;
+
+                .description{
+
+                    &__title{
+                        font-size: $title-font-size;
+                    }
+                }
             }
         }
     }
@@ -89,7 +95,6 @@
         @include width($cook-master-breakpoints);
         margin-top: 2%;
         background-color: $corporative-secondary-bacground;
-        box-shadow: 0 0 40px color(display-p3 0.91 0.91 0.91);
 
         .presentation {
 

@@ -12,6 +12,7 @@ $hover-background-color: hwb(349 85% 0%);
 $disabled-corporative-color: hwb(0 53% 47%);
 $corporative-secondary-bacground: hwb(0 66% 19% / 0.3);
 $cook-master-breakpoints : (0px, 576px, 768px, 992px, 1200px, 1400px, 1600px, 1800px);
+$title-font-size: 2.8rem;
 
 
 @mixin font-menu {
@@ -45,7 +46,7 @@ $cook-master-breakpoints : (0px, 576px, 768px, 992px, 1200px, 1400px, 1600px, 18
   right: 1%;
   bottom: 1%;
   background-color: $corporative-secondary-bacground;
-  color: $contrast-color;
+  color: $contrast-color !important;
 }
 
 @mixin blockquote-format {
@@ -64,7 +65,7 @@ $cook-master-breakpoints : (0px, 576px, 768px, 992px, 1200px, 1400px, 1600px, 18
 }
 
 // modificación shadow bs
-$box-shadow-sm: 0 .125rem 8rem hwb(0 0% 100% / 0.075);
+$box-shadow-sm: 0 0 20px color(display-p3 0.7 0.7 0.7);
 
 //Personalización de componente bootstrap - card
 $enable-shadows: "true";
@@ -72,7 +73,8 @@ $card-color: $corporative-color;
 $card-bg: $corporative-secondary-bacground;
 $card-title-color: $corporative-color;
 $card-border-radius: none;
-$card-box-shadow: 0 .125rem 8rem hwb(0 0% 100% / 0.5);
+// $card-box-shadow: 0 .125rem 8rem hwb(0 0% 100% / 0.5);
+$card-box-shadow: $box-shadow-sm;
 
 //Personalización de componente bootstrap - breadcrumb
 $breadcrumb-padding-y: 1%;
@@ -106,22 +108,22 @@ $component-active-bg: $corporative-color;
   @return calc(8px + 0.390625vw);
 }
 
-// MXINO width para el cálculo del width en función del ancho de la pantalla
 @mixin width($list) {
   @each $element in $list {
     @media (min-width: #{$element}) {
-      width: calc-width($element);
+      width: calc-width($element, 40%);
     }
   }
 }
 
-@function calc-width($size) {
+@function calc-width($size, $widht-offset) {
 
   // 6.67%--> resultado de dividir 40/6. 40% que varía el width 
   // desde la pantalla del móvil hasta el pc más grande y 6 por 
   // los 6 breakpints definidos
+  // $widht-offset : variación del width del elemento
   $number-od-breakpoints: length($cook-master-breakpoints) - 1;
-  $widht-offset: 40%;
+  
   $increment: calc($widht-offset / $number-od-breakpoints);
 
   $step: list.index($cook-master-breakpoints, $size) - 1;

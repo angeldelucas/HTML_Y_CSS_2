@@ -1,23 +1,57 @@
-.input {
+:where(main){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// :where tiene especifidad 0, por tanto :is siempre se a aplicar cuando
+// se cumpla la @media querie. Si intercambio where por is para la clase input
+// nunca se aplicaría la regla definida dentro de la @media querie puesto que :is
+// siempre estaría por encima.
+:where(.input) {
 
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1%;
-    container-type: inline-size;
+    width: 100%;
+}
 
-    &__intro {
-        padding-bottom: 2%;
-        background-color: $corporative-secondary-bacground;
-        box-shadow: 0 0 40px color(display-p3 0.91 0.91 0.91);
-    }
 
-    >* {
+:is(.input) {
+
+    @media (min-width: 768px) {
         @include width($cook-master-breakpoints);
+        display: grid;
+        grid-template-columns: 70% 30%;
+        align-items: flex-start;
+        justify-content: center;
+        column-gap: 2%;
+
+        .input__main-article{
+            grid-column-start: 1;
+        }
     }
 }
 
-:where(figure) {
+.input__main-article:has(section) {
+
+    >section {
+        padding-bottom: 2%;
+        background-color: $corporative-secondary-bacground;
+    }
+}
+
+.input__recents-articles:has(section){
+
+    >section {
+        margin-bottom: 4%;
+        padding-bottom: 2%;
+        background-color: $corporative-secondary-bacground;
+    }
+}
+
+:is(figure) {
     position: relative;
 
     :is(img) {
@@ -37,6 +71,10 @@
     }
 }
 
+:is(h1) {
+    font-size: $title-font-size;
+}
+
 :is(h2) {
     margin: 3% 0 1% 0;
 }
@@ -45,9 +83,55 @@
     font-size: small;
 }
 
-.input__intro:has(blockquote) {
+:is(a){
+    text-decoration: none;
+
+    &:hover{
+        color: $corporative-color-hover !important;
+    }
+}
+
+.main-article__section:has(blockquote) {
 
     >blockquote {
         @include blockquote-format();
+    }
+}
+
+
+// :is tiene mayor especificidad que :where puesto que :where deja a 0 
+// la especificidad de los elementos indicados en la pseudoclase. Con las layers
+// se consigue aplicar una especificidad mayor a la layer desktop frente a la mobile
+@layer mobile, destokp;
+
+@layer mobile {
+
+    :is(.input__recents-articles) {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10%;
+
+        >h2{
+            top: -5%;
+        }
+
+        >section:nth-child(3){
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+    }
+}
+
+@layer destokp {
+
+    @media (min-width: 576px) and (max-width: 768px) {
+        :where(.input__recents-articles) {
+            display: flex;
+            flex-direction: row;
+
+            >h2{
+                top: -20%;
+            }
+        }
     }
 }
