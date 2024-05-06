@@ -121,15 +121,14 @@
 
 
 
-            :is(.form-check-input:checked) {
+            :is(.form-check-input:not(:checked)) {
 
                 ~.recipes__description {
                     visibility: hidden;
                     opacity: 0;
                 }
 
-                ~.flex-row>.form-check-label {
-                    transition: all 800ms ease-in-out;
+                ~.flex-row>.form-check-label {                    
                     transform: rotate(180deg);
                 }
             }
@@ -137,6 +136,7 @@
             .recipes {
 
                 &__arrow {
+                    transition: all 800ms ease-in-out;
                     background-color: $corporative-color;
                     color: $contrast-color;
                     border-radius: 50px;
