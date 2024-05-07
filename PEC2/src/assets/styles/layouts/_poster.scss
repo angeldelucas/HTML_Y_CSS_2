@@ -1,10 +1,10 @@
 .poster {
+    padding: 1%;
     margin: 3% 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     container-type: inline-size;
-    padding: 1%;
 
     &__compose {
         @include width($cook-master-breakpoints);
@@ -79,7 +79,6 @@
                 top: 75%;
 
                 .description {
-
                     &__title-compose {
                         font-size: $title-font-size;
                     }
@@ -95,17 +94,13 @@
         background-color: $corporative-secondary-bacground;
 
         .presentation {
-
             &__article {
-
                 .article {
-
                     &__photo {
-                        position: relative;
                         margin: 0;
+                        position: relative;
 
                         .photo {
-
                             &__img {
                                 min-height: 350px;
                             }
@@ -117,11 +112,9 @@
                     }
 
                     &__text {
-
                         padding: 1%;
 
                         .text {
-
                             &__cite {
                                 @include blockquote-format();
                             }
@@ -138,7 +131,6 @@
 @container (min-width: 768px) {
     .poster {
         &__compose {
-
             .compose {
                 &__image-contaier {
                     height: 100%;
@@ -152,22 +144,18 @@
         }
 
         &__presentation {
-
             .presentation {
-
                 &__article {
                     display: flex;
                     flex-direction: row;
 
                     .article {
-
                         &__text {
                             display: flex;
                             align-items: center;
                             position: relative;
 
                             .text {
-
                                 &__title-compose {
                                     position: absolute;
                                     top: -3%;
@@ -352,7 +340,7 @@
     @container (min-width: 992px) {
         .poster {
             &__compose {
-                height: 70lvh;
+                height: 70dvh;
             }
         }
     }

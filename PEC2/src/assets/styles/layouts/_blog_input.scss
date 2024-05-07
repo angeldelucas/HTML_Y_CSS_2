@@ -9,12 +9,11 @@
 // nunca se aplicaría la regla definida dentro de la @media querie puesto que :is
 // siempre estaría por encima.
 :where(.input) {
-
+    width: 100%;
+    padding: 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1%;
-    width: 100%;
 }
 
 
@@ -35,7 +34,6 @@
 }
 
 .input__main-article:has(section) {
-
     >section {
         padding-bottom: 2%;
         background-color: $corporative-secondary-bacground;
@@ -43,16 +41,14 @@
 }
 
 .input__recents-articles:has(section) {
-
     >section {
-        margin-bottom: 4%;
         padding-bottom: 2%;
+        margin-bottom: 4%;
         background-color: $corporative-secondary-bacground;
     }
 }
 
 .recents-articles__article:has(div>h3>a) {
-
     div>h3>a {
         text-decoration: none;
 
@@ -63,7 +59,6 @@
 }
 
 .main-article__section:has(blockquote) {
-
     >blockquote {
         @include blockquote-format();
     }
@@ -76,19 +71,18 @@
 @layer mobile, destokp;
 
 @layer mobile {
-
     :is(.input__recents-articles) {
+        margin-top: 10%;
         display: flex;
         flex-direction: column;
-        margin-top: 10%;
 
         >h2 {
             top: -5%;
         }
 
         >section:nth-child(3) {
-            margin-left: 2%;
             margin-right: 2%;
+            margin-left: 2%;
         }
     }
 }

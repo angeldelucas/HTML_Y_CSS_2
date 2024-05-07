@@ -7,7 +7,9 @@ body {
 }
 
 html {
+  /* stylelint-disable */
   font-size: calc-font-size();
+  /* stylelint-enable */
 }
 
 :where(p, li) {
@@ -40,7 +42,7 @@ html {
 }
 
 :is(h2) {
-  margin: 3% 0 1% 0;
+  margin: 3% 0 1%;
 }
 
 :is(h4) {
@@ -52,10 +54,10 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
   background: $corporative-background;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }

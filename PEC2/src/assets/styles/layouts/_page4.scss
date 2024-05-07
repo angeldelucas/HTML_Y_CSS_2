@@ -6,7 +6,6 @@
 @layer not-selected, selected;
 
 @layer not-selected {
-
     .page4-title {
         font-size: $title-font-size !important;
     }
@@ -19,14 +18,14 @@
         align-items: center;
 
         &__images {
-            height: 60dvh;
-            min-height: 330px;
             @include width($cook-master-breakpoints);
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
+            height: 60dvh;
             margin-top: 2%;
             margin-bottom: 2%;
+            display: flex;
+            flex-direction: row;
+            min-height: 330px;
+            justify-content: center;
             container-type: inline-size;
             container-name: images;
 
@@ -81,7 +80,6 @@
                             opacity: 0;
 
                             .info {
-
                                 &__btn {
                                     @include cook-btn();
                                     background-color: $contrast-color !important;
@@ -103,24 +101,23 @@
         }
 
         &__recipes {
-            height: 100dvh;
             width: 100%;
-            box-shadow: $box-shadow-sm;
+            height: 100dvh;
+            padding: 1% 2% 0%;
             margin: 2% 0%;
-            padding: 1% 2% 0% 2%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: $box-shadow-sm;
             background-image: url("../images/ganador_2023.jpg");
             background-size: cover;
             background-position: 60%;
-            display: flex;
             justify-content: flex-start;
-            flex-direction: column;
             align-items: center;
             transition: all 800ms ease-in-out;
             container-type: inline-size;
             container-name: recipes;
 
             :is(.form-check-input:not(:checked)) {
-
                 ~.recipes__description {
                     visibility: hidden;
                     opacity: 0;
@@ -132,7 +129,6 @@
             }
 
             .recipes {
-
                 &__arrow {
                     transition: all 800ms ease-in-out;
                     background-color: $corporative-color;
@@ -147,19 +143,17 @@
 
                 &__description {
                     width: 35%;
-                    background-image: url("../images/background.jpg");
-                    background-size: cover;
-                    opacity: 0.7;
+                    height: 100dvh;
                     padding: 1%;
                     position: relative;
                     top: inherit;
+                    background-image: url("../images/background.jpg");
+                    background-size: cover;
                     opacity: 1;
                     transition: all 800ms ease-in-out;
-                    height: 100dvh;
                     overflow: auto;
 
                     .description {
-
                         &__text {
                             font-size: 1.5rem;
                         }
@@ -168,13 +162,13 @@
 
                 &__video-container {
                     width: 100%;
-                    perspective: 95px;
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
                     position: absolute;
-                    left: 0;
                     top: auto;
+                    left: 0;
+                    perspective: 95px;
+                    justify-content: center;
 
                     .video-container {
                         &__video {
@@ -218,9 +212,7 @@
     }
 
     @media (min-width: 992px) {
-
         .poster-container {
-
             &__recipes {
                 align-items: flex-start;
             }
@@ -229,13 +221,9 @@
 
     @container images (max-width: 768px) {
         .poster-container {
-
             &__images {
-
                 .images {
-
                     &__container {
-
                         width: 20%;
 
                         &:hover {
@@ -252,35 +240,26 @@
     }
 
     @container recipes (max-width: 768px) {
-
         .poster-container {
-
             &__recipes {
-
                 .recipes {
-
                     &__description {
                         width: 80%;
                         height: 70%;
                     }
 
                     &__video-container {
-                        perspective: none;
-                        position: inherit;
-                        margin-right: 0px;
-                        perspective: 0px;
+                        margin-right: 0;
                         display: flex;
                         flex-direction: column;
+                        position: inherit;
                         justify-content: center;
 
                         .video-container {
                             &__video {
                                 width: 100%;
                                 height: 100%;
-                                rotate: 0deg;
                                 position: absolute;
-                                transform-style: none;
-                                transform: rotateY(0deg);
                                 z-index: 0;
                             }
                         }
@@ -292,7 +271,6 @@
 }
 
 @layer selected {
-
     .selected {
         width: 50%;
         scale: 1.1;

@@ -4,12 +4,20 @@
       "stylelint-config-recommended-scss",
       "stylelint-config-sass-guidelines"
    ],
-   "rules": {      
+   "rules": {
       "comment-no-empty": true,
       "declaration-property-value-no-unknown": [
          true,
          {
             "message": "Poperty value not allowed"
+         }
+      ],
+      "selector-no-qualifying-type": [
+         true,
+         {
+            "ignore": [
+               "attribute"
+            ]
          }
       ],
       "selector-class-pattern": [
@@ -32,14 +40,26 @@
             "message": "Empty line before declaration not allowed"
          }
       ],
-      "unit-allowed-list": ["%", "deg", "px", "rem", "ms", "s", "vh", "vw", "fr"],
+      "no-descending-specificity": null,
+      "unit-allowed-list": [
+         "%",
+         "deg",
+         "px",
+         "rem",
+         "ms",
+         "s",
+         "vh",
+         "vw",
+         "fr",
+         "dvh"
+      ],
       "declaration-property-unit-allowed-list": {
          "/^border/": [
             "px"
          ],
          "/^font-size/": [
             "rem"
-         ]         
+         ]
       },
       "order/properties-order": [
          "width",
