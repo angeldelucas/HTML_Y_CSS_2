@@ -6,8 +6,8 @@ body {
   margin: 0;
 }
 
-html{
-  font-size: calc-font-size(); 
+html {
+  font-size: calc-font-size();
 }
 
 :where(p, li) {
@@ -15,34 +15,47 @@ html{
 }
 
 :is(figure) {
-    position: relative;
+  position: relative;
 
-    :is(img) {
-        width: 100%;
-    }
+  :is(img) {
+    width: 100%;
+  }
 
-    :is(figcaption) {
-        @include author();
-    }
+  :is(figcaption) {
+    @include author();
+  }
 
-    ~:is(p) {
-        font-weight: bold;
-        font-size: 1.4rem;
-    }
+  ~:is(p) {
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
 
-    ~* {
-        padding: 0% 2%;
-    }
+  ~* {
+    padding: 0% 2%;
+  }
 }
 
 :is(h1) {
-    font-size: $title-font-size;
+  font-size: $title-font-size;
 }
 
 :is(h2) {
-    margin: 3% 0 1% 0;
+  margin: 3% 0 1% 0;
 }
 
 :is(h4) {
-    font-size: small;
+  font-size: small;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: $corporative-background;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }

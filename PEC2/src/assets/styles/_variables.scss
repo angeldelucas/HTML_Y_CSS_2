@@ -88,11 +88,10 @@ $component-active-bg: $corporative-color;
 
 // mixin para personalización de componente bootstrap - button
 @mixin cook-btn {
-  @include button-variant(
+  @include button-variant($contrast-color,
     $contrast-color,
-    $contrast-color, 
     $corporative-color,
-    $contrast-color, 
+    $contrast-color,
     $contrast-color,
     $corporative-color,
     $contrast-color,
@@ -100,8 +99,7 @@ $component-active-bg: $corporative-color;
     $contrast-color,
     $disabled-corporative-color,
     $disabled-corporative-color,
-    $disabled-corporative-color
-  );
+    $disabled-corporative-color );
 }
 
 @function calc-font-size() {
@@ -123,7 +121,7 @@ $component-active-bg: $corporative-color;
   // los 6 breakpints definidos
   // $widht-offset : variación del width del elemento
   $number-od-breakpoints: length($cook-master-breakpoints) - 1;
-  
+
   $increment: calc($widht-offset / $number-od-breakpoints);
 
   $step: list.index($cook-master-breakpoints, $size) - 1;

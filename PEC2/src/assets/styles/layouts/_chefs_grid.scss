@@ -1,18 +1,18 @@
-.grid-title{
+.grid-title {
     font-size: $title-font-size;
+    top: 0;
 }
 
 .chef-grid__container {
     width: 100%;
     margin: 0;
+    padding: 3% 0%;
     display: flex;
     flex-direction: column;
     align-items: center;
     container-type: inline-size;
 
     .container {
-
-       
 
         &__grid {
             width: 100%;
@@ -26,7 +26,6 @@
                 &__card {
                     width: 100%;
                     margin: 1%;
-
 
                     .card {
                         &__image {

@@ -38,7 +38,7 @@ import * as bootstrap from 'bootstrap';
     3: {
       title: 'Dulcura en verde',
       author: 'David Gómez - 2021',
-      text: 'En la sencillez y los pequeños detalles reside el éxito. Esta receta presenta una colorida combinación de verduras frescas, como zanahorias, calabacines, berenjenas y pimientos, sazonadas con ajo, aceite de oliva y hierbas provenzales. Tras ser cortadas y sazonadas, las verduras se hornean hasta que estén ligeramente doradas. Durante la cocción, los aromas se mezclan, creando una fragancia irresistible. Las verduras al horno se sirven calientes, ofreciendo un plato sabroso y nutritivo, perfecto como acompañamiento o plato principal. Esta receta resalta la frescura y versatilidad de las verduras.'
+      text: 'En la sencillez y los pequeños detalles reside el éxito. Esta receta presenta una colorida combinación de verduras frescas, como zanahorias, calabacines, berenjenas y pimientos, sazonadas con ajo, aceite de oliva y hierbas provenzales. Tras ser cortadas y sazonadas, las verduras se hornean hasta que estén ligeramente doradas. Durante la cocción, los aromas se mezclan, creando una fragancia irresistible. Las verduras al horno se sirven calientes, ofreciendo un plato sabroso y nutritivo, perfecto como acompañamiento o plato principal.'
     },
     4: {
       title: 'Delicias del Japón',
@@ -66,7 +66,7 @@ import * as bootstrap from 'bootstrap';
     for (let index = 0; index < videos.length; index++) {
       videos[index].style.zIndex = 0;
       videos[index].style.opacity = 0;
-    }    
+    }
 
     for (let index = 0; index < imagesContainer.length; index++) {
       imagesContainer[index].className = "images__container";
@@ -85,13 +85,13 @@ import * as bootstrap from 'bootstrap';
     info.className = "container__info selected-info";
 
     video.style.zIndex = 10;
-    video.style.opacity = 10;
+    video.style.opacity = 1;
     receipContainer.className = "poster-container__recipes " + recipesImages[receipeNumber];
     recipeTitle.textContent = recipesDescription[receipeNumber].title;
     recipeAuthor.textContent = recipesDescription[receipeNumber].author;
     recipeText.textContent = recipesDescription[receipeNumber].text;
-    
-    window.scrollTo(0, receipContainer.offsetTop); 
+
+    window.scrollTo(0, receipContainer.offsetTop);
   };
 
   let buttons = document.querySelectorAll(".container__info > .info__btn");
@@ -106,9 +106,11 @@ import * as bootstrap from 'bootstrap';
   for (let index = 0; index < buttons.length; index++) {
     buttons[index].addEventListener('click', showReceipe);
   }
-  
-  // for (let index = 0; index < navButtons.length; index++) {
-  //   navButtons[index].addEventListener('click', showReceipe);
-  // }
+
+  if(recipeTitle && recipeAuthor && recipeText){
+    recipeTitle.textContent = recipesDescription[5].title;
+    recipeAuthor.textContent = recipesDescription[5].author;
+    recipeText.textContent = recipesDescription[5].text;
+  }
 }
 )();

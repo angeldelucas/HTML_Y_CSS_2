@@ -20,7 +20,7 @@
 
 :is(.input) {
 
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
         @include width($cook-master-breakpoints);
         display: grid;
         grid-template-columns: 70% 30%;
@@ -55,7 +55,7 @@
 
     div>h3>a {
         text-decoration: none;
-        
+
         &:hover {
             color: $corporative-color-hover;
         }

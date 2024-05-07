@@ -2,7 +2,7 @@
  * Use this file to import partials.
  * Do not include SCSS code in this file.
  */
- 
+
 /**
  * Import variables
  */
@@ -14,11 +14,11 @@
  * see commented examples below
  */
 
- // @import "some-node-module";
- // @import "@some-company/some-node-module";
- @import "npm:@fortawesome/fontawesome-free/css/all.css";
- @import "bootstrap/scss/bootstrap";
- @import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
+// @import "some-node-module";
+// @import "@some-company/some-node-module";
+@import "npm:@fortawesome/fontawesome-free/css/all.css";
+@import "bootstrap/scss/bootstrap";
+@import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
 
 
 /**

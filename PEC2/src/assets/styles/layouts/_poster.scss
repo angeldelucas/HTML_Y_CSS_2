@@ -1,5 +1,3 @@
-
-
 .poster {
     margin: 3% 0;
     display: flex;
@@ -80,9 +78,9 @@
                 position: absolute;
                 top: 75%;
 
-                .description{
+                .description {
 
-                    &__title{
+                    &__title-compose {
                         font-size: $title-font-size;
                     }
                 }
@@ -170,7 +168,7 @@
 
                             .text {
 
-                                &__title {
+                                &__title-compose {
                                     position: absolute;
                                     top: -3%;
                                 }
@@ -240,7 +238,6 @@
     @container (min-width: 768px) {
         .poster {
             &__compose {
-                // height: 50lvh;
                 max-width: inherit;
                 grid-template-columns: repeat(5, 1fr);
                 grid-template-rows: repeat(3, 1fr);
@@ -348,7 +345,6 @@
                         translate: -100% -100%;
                     }
                 }
-
             }
         }
     }
@@ -359,7 +355,6 @@
                 height: 70lvh;
             }
         }
-
     }
 }
 

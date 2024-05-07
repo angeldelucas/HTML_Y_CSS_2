@@ -106,20 +106,18 @@
             height: 100dvh;
             width: 100%;
             box-shadow: $box-shadow-sm;
-            margin-top: 2%;
-            padding: 2%;
+            margin: 2% 0%;
+            padding: 1% 2% 0% 2%;
             background-image: url("../images/ganador_2023.jpg");
             background-size: cover;
             background-position: 60%;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             flex-direction: column;
             align-items: center;
             transition: all 800ms ease-in-out;
             container-type: inline-size;
             container-name: recipes;
-
-
 
             :is(.form-check-input:not(:checked)) {
 
@@ -128,7 +126,7 @@
                     opacity: 0;
                 }
 
-                ~.flex-row>.form-check-label {                    
+                ~.flex-row>.form-check-label {
                     transform: rotate(180deg);
                 }
             }
@@ -148,21 +146,19 @@
                 }
 
                 &__description {
-                    width: 30%;
-                    height: 100%;
-                    background-image: url("../images/6203.jpg");
+                    width: 35%;
+                    background-image: url("../images/7091.jpg");
                     background-size: cover;
-                    opacity: 0.9;
+                    opacity: 0.7;
                     padding: 1%;
-                    position: inherit;
+                    position: relative;
                     top: inherit;
                     opacity: 1;
                     transition: all 800ms ease-in-out;
-
-
+                    height: 100dvh;
+                    overflow: auto;
 
                     .description {
-
 
                         &__text {
                             font-size: 1.5rem;
@@ -171,12 +167,14 @@
                 }
 
                 &__video-container {
-                    height: 100%;
-                    margin-top: 60px;
+                    width: 100%;
                     perspective: 95px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
+                    position: absolute;
+                    left: 0;
+                    top: auto;
 
                     .video-container {
                         &__video {
@@ -219,7 +217,7 @@
         filter: grayscale(80%);
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
 
         .poster-container {
 
@@ -232,11 +230,10 @@
     @container images (max-width: 768px) {
         .poster-container {
 
-
             &__images {
 
-
                 .images {
+
                     &__container {
 
                         width: 20%;
@@ -263,9 +260,8 @@
                 .recipes {
 
                     &__description {
-                        height: 100%;
                         width: 80%;
-
+                        height: 70%;
                     }
 
                     &__video-container {
@@ -288,13 +284,11 @@
                                 z-index: 0;
                             }
                         }
-
                     }
                 }
             }
         }
     }
-
 }
 
 @layer selected {
@@ -313,7 +307,6 @@
     }
 
     .selected-img {
-
         width: 60%;
         height: 100%;
         position: inherit;
