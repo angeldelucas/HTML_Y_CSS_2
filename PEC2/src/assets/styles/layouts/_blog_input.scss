@@ -87,7 +87,7 @@
 
 @layer destokp {
 
-    @container (min-width: 576px) and (max-width: 768px) {
+    @container (min-width: 576px) and (max-width: 992px) {
         :where(.input__recents-articles) {
             flex-direction: row;
 
