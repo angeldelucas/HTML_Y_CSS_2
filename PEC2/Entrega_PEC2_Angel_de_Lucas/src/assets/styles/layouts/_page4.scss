@@ -1,0 +1,302 @@
+// En esta vista al aplicar capas para elemtos seleccionados cuando añadimos la clase
+// selected a ciertos elementos, las reglas definidas en esa layer pisan a las aplicadas 
+// a las reglas en la clase not-selected. En este caso he añadido java script para aplicar
+// esa clase.
+
+@layer not-selected, selected;
+
+@layer not-selected {
+    .page4-title {
+        font-size: $title-font-size !important;
+    }
+
+    .poster-container {
+        height: 60%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__images {
+            @include width($cook-master-breakpoints);
+            height: 60dvh;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            display: flex;
+            flex-direction: row;
+            min-height: 330px;
+            justify-content: center;
+            container-type: inline-size;
+            container-name: images;
+
+            .images {
+                &__container {
+                    width: 15%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    overflow: hidden;
+                    transition: all 800ms ease-in-out;
+
+                    &:hover {
+                        width: 30%;
+                        scale: 1.1;
+                    }
+
+                    &:hover>.container__img {
+                        width: 80%;
+                        height: 100%;
+                        position: inherit;
+                        right: inherit;
+                        box-shadow: $box-shadow-sm;
+                        filter: brightness(150%);
+
+                        ~.container__info {
+                            opacity: 1;
+                            visibility: visible;
+                            position: absolute;
+                            bottom: 3%;
+                        }
+                    }
+
+                    .container {
+                        &__img {
+                            height: 100%;
+                            position: relative;
+                            right: 50%;
+                            transition: all 800ms ease-in-out;
+                        }
+
+                        &__info {
+                            transition: all 800ms ease-in-out;
+                            background-color: $corporative-color;
+                            padding: 5%;
+                            display: flex;
+                            flex-direction: column;
+                            bottom: 0%;
+                            color: $contrast-color;
+                            justify-content: flex-end;
+                            visibility: hidden;
+                            opacity: 0;
+
+                            .info {
+                                &__btn {
+                                    @include cook-btn();
+                                    background-color: $contrast-color !important;
+                                }
+
+                                &__label {
+                                    width: 100%;
+                                    height: 100%;
+
+                                    &:hover {
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__recipes {
+            width: 100%;
+            height: 100dvh;
+            padding: 1% 2% 0%;
+            margin: 2% 0%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: $box-shadow-sm;
+            background-image: url("../images/ganador_2023.jpg");
+            background-size: cover;
+            background-position: 60%;
+            justify-content: flex-start;
+            align-items: center;
+            transition: all 800ms ease-in-out;
+            container-type: inline-size;
+            container-name: recipes;
+
+            :is(.form-check-input:not(:checked)) {
+                ~.recipes__description {
+                    visibility: hidden;
+                    opacity: 0;
+                }
+
+                ~.flex-row>.form-check-label {
+                    transform: rotate(180deg);
+                }
+            }
+
+            .recipes {
+                &__arrow {
+                    transition: all 800ms ease-in-out;
+                    background-color: $corporative-color;
+                    color: $contrast-color;
+                    border-radius: 50px;
+                    font-size: 1.2rem;
+
+                    >label:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                &__description {
+                    width: 35%;
+                    height: 100dvh;
+                    padding: 1%;
+                    position: relative;
+                    top: inherit;
+                    background-image: url("../images/background.jpg");
+                    background-size: cover;
+                    opacity: 1;
+                    transition: all 800ms ease-in-out;
+                    overflow: auto;
+
+                    .description {
+                        &__text {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+
+                &__video-container {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    top: auto;
+                    left: 0;
+                    perspective: 95px;
+                    justify-content: center;
+
+                    .video-container {
+                        &__video {
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            z-index: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .back-image-2019 {
+        background-image: url("../images/ganador_2019.jpg");
+    }
+
+    .back-image-2020 {
+        background-image: url("../images/ganador_2020.jpg");
+    }
+
+    .back-image-2021 {
+        background-image: url("../images/ganador_2021.jpg");
+    }
+
+    .back-image-2022 {
+        background-image: url("../images/ganador_2022.jpg");
+    }
+
+    .back-image-2023 {
+        background-image: url("../images/ganador_2023.jpg");
+    }
+
+    .poster-container__images:has(.images__container:hover)>.images__container:not(:hover)>.container__img {
+        background-color: rgb(245, 245, 220);
+        opacity: 0.5;
+        z-index: -1;
+        scale: 0.9;
+        filter: grayscale(80%);
+    }
+
+    @media (min-width: 992px) {
+        .poster-container {
+            &__recipes {
+                align-items: flex-start;
+            }
+        }
+    }
+
+    @container images (max-width: 768px) {
+        .poster-container {
+            &__images {
+                .images {
+                    &__container {
+                        width: 20%;
+
+                        &:hover {
+                            width: 200%;
+                            height: 80%;
+                            position: relative;
+                            scale: 1.1;
+                            top: 10%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @container recipes (max-width: 768px) {
+        .poster-container {
+            &__recipes {
+                .recipes {
+                    &__description {
+                        width: 80%;
+                        height: 70%;
+                    }
+
+                    &__video-container {
+                        margin-right: 0;
+                        display: flex;
+                        flex-direction: column;
+                        position: inherit;
+                        justify-content: center;
+
+                        .video-container {
+                            &__video {
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                z-index: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@layer selected {
+    .selected {
+        width: 30%;
+        scale: 1.1;
+
+        @container images (max-width: 768px) {
+            width: 80%;
+            height: 80%;
+            position: relative;
+            scale: 1.1;
+            top: 10%;
+        }
+    }
+
+    .selected-img {
+        width: 80%;
+        height: 100%;
+        position: inherit;
+        right: inherit;
+        box-shadow: $box-shadow-sm;
+        filter: brightness(150%);
+    }
+
+    .selected-info {
+        opacity: 1;
+        visibility: visible;
+        position: absolute;
+        bottom: 3%;
+    }
+}

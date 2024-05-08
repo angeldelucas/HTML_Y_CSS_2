@@ -1,0 +1,119 @@
+.header {
+    &__nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .nav {
+            &__logo {
+                @include hide();
+                height: fit-content;
+            }
+
+            &__logo-movil-text {
+                @include show();
+                position: absolute;
+                top: 1%;
+                left: 1%;
+            }
+
+            &__options {
+                @include hide();
+            }
+
+            &__dropdown {
+                width: 100%;
+                padding: 3%;
+
+                .dropdown {
+                    &__btn {
+                        @include hide();
+                    }
+
+                    &__label {
+                        @include font-menu();
+                    }
+
+                    &__options {
+                        @include hide();
+                        list-style: none;
+
+                        .options {
+                            &__elto {
+                                width: 100%;
+                                margin-top: 2rem;
+
+                                .elto {
+                                    &__internal-link {
+                                        @include font-menu();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:has(input[type="checkbox"]:checked) .dropdown__options {
+        @include show();
+    }
+}
+
+@media(min-width: 768px) {
+    .header {
+        height: auto;
+
+        &__nav {
+            padding: 1%;
+
+            .nav {
+                &__logo {
+                    @include show();
+                }
+
+                &__logo-movil-text {
+                    @include hide();
+                }
+
+                &__logo-movil {
+                    @include hide();
+                }
+
+                &__options {
+
+                    @include show();
+                    height: fit-content;
+                    display: flex;
+                    list-style: none;
+
+                    .options {
+                        &__elto {
+                            margin: 2rem;
+
+                            .elto {
+                                &__internal-link {
+                                    @include font-menu();
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &__dropdown {
+                    @include hide();
+                    inset: 0;
+
+                    .dropdown {
+                        &__options {
+                            visibility: hidden !important;
+                            position: absolute;
+                            inset: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

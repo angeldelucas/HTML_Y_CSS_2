@@ -1,0 +1,115 @@
+.footer {
+    padding: 8% 1% 1%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: $corporative-color;
+    align-items: center;
+
+    &__left {
+        margin: 5% 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .left {
+            &__logo {
+                width: 120px;
+                height: 40px;
+            }
+
+            &__copyright {
+                margin: 0;
+                color: $contrast-color;
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    &__options {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 4%;
+        left: 0;
+        list-style: none;
+        justify-content: center;
+
+        .options {
+            &__elto {
+                margin: 0 4%;
+
+                .elto {
+                    &__internal-link {
+                        @include font-menu();
+                        text-decoration: none;
+                        color: $contrast-color;
+
+                        &:hover {
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__right {
+        .right {
+            &__menu {
+                width: 100%;
+                padding: 0;
+                margin: 12% 0;
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+                justify-content: center;
+
+                .menu {
+                    &__elto {
+                        margin: 1%;
+
+                        .elto {
+                            &__link {
+                                text-decoration: none;
+                                color: $contrast-color;
+                                font-size: 0.8rem;
+
+                                &:hover {
+                                    opacity: 0.7;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .footer {
+        padding: 1%;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &__left {
+            margin: 0;
+        }
+
+        &__options {
+            top: inherit;
+            left: 0;
+
+            .options {
+                &__elto {
+                    margin: 0 2%;
+                }
+            }
+        }
+    }
+
+}

@@ -272,7 +272,7 @@
 
 @layer selected {
     .selected {
-        width: 50%;
+        width: 30%;
         scale: 1.1;
 
         @container images (max-width: 768px) {
@@ -285,7 +285,7 @@
     }
 
     .selected-img {
-        width: 60%;
+        width: 80%;
         height: 100%;
         position: inherit;
         right: inherit;

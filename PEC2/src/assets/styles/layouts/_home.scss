@@ -12,6 +12,12 @@ html {
   /* stylelint-enable */
 }
 
+:where(main) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 :where(p, li) {
   font-size: 1.2rem;
 }
