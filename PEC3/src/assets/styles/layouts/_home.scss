@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  font-size: calc-font-size();
+}
+
+.show-menu:has(input[type="checkbox"]:checked) {
+  .show {
+    visibility: visible;
+    position: inherit;
+  }
+}
+
+.dinamyc-width {
+  @include width($cook-master-breakpoints);
+}
+
+.cm-btn{
+  @apply m-4 p-2 bg-white text-lg w-36 rounded-md hover:bg-cm-color hover:text-white duration-500;
+}
+
+.cm-card{
+  @apply text-center m-3 w-full border-solid border-2 border-cm-border shadow-cm bg-cm-bg @cm-container:max-w-sm;
+}

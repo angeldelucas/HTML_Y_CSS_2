@@ -1,0 +1,34 @@
+@use "sass:list";
+
+@function calc-font-size() {
+    @return calc(8px + 0.390625vw);
+  }
+
+
+// $corporative-color: #ab2136;
+// $corporative-background: #cf73734d; 
+$cook-master-breakpoints: (0, 576px, 768px, 992px, 1200px, 1400px, 1600px, 1800px);
+
+@mixin width($list) {
+  @each $element in $list {
+    @media (min-width: #{$element}) {
+      width: calc-width($element, 40%);
+    }
+  }
+}
+
+@function calc-width($size, $widht-offset) {
+
+  // 6.67%--> resultado de dividir 40/6. 40% que varía el width 
+  // desde la pantalla del móvil hasta el pc más grande y 6 por 
+  // los 6 breakpints definidos
+  // $widht-offset : variación del width del elemento
+  $number-od-breakpoints: list.length($cook-master-breakpoints) - 1;
+
+  $increment: calc($widht-offset / $number-od-breakpoints);
+
+  $step: list.index($cook-master-breakpoints, $size) - 1;
+  $offset: calc($step * $increment);
+
+  @return calc(100% - $offset);
+}
